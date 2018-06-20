@@ -1,0 +1,232 @@
+/*css样式初始化*/
+html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    border: none;
+}
+a,input,button{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover,a:focus{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/*首页*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#first_page{
+    width:100%;
+    height: 100%;
+    background: url('../img/first.png') no-repeat;
+    background-size:100% 100%;
+}
+.left_info{
+    position: relative;
+    left: 12%;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    bottom: 0;
+}
+.summary{
+    height: 100%;
+}
+#first_page .left_info .title{
+    list-style: none;
+    height:40px;
+    font-size:24px;
+    color: #ba9a67;
+    font-weight: 500;
+    position: absolute;
+    bottom: -40px;
+    opacity: 0;
+}
+#first_page .left_info .title:hover{
+    color: #75553f;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color:#ba9a67;
+    display: inline-block;
+}
+#first_page .left_info .title:hover .triangle{
+    border-left-color: #75553f;
+}
+#first_page .left_info .title .word{
+    display: inline-block;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+    float: right;
+    text-decoration: none;
+    cursor: pointer;
+}
+.logo{
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    width: 136px;
+    height: 65px;
+    margin: auto;
+    background: url("../img/logo.png");
+    opacity: 0;
+    cursor: pointer;
+}
+/*文物基本信息*/
+.sx_nav{
+    width: 100%;
+    height: 80px;
+    border-bottom:1px solid #dcdcdc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.sx_nav_logo{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    margin: 13px 0 13px 33px;
+    float: left;
+}
+.sx_nav_logo img{
+    width: 100%;
+    height: 100%;
+}
+.sx_nav_ul{
+    float: left;
+    margin-left: 210px;
+}
+.sx_nav_ul li{
+    line-height: 80px;
+    margin:0  50px;
+    float: left;
+}
+.sx_nav_ul li:first-child{
+    margin-left: 0;
+}
+.sx_nav_ul li a{
+    font-size: 18px;
+    color: #666666;
+}
+.sx_nav_ul li a:focus{
+    color: #ba9a67;
+}
+/*环境信息*/
+.env_info{
+    width: 82%;
+    height: 100%;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+.env_info_box{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background: url("../img/box_pic.png") no-repeat 100%;
+    margin: 0 auto;
+    padding-left: 33px;
+    margin-bottom: 20px;
+}
+.env_info_box span{
+    color: #ba9a67;
+    margin: 0 15px;
+    float: left;
+}
+.env_info_box span:last-child{
+    margin-right: 0;
+}
+.env_info_box img{
+    vertical-align: middle;
+}
+.env_info_box  .verticalLine{
+    width: 1px;
+    height: 51px;
+    display: block;
+    float: left;
+    background-color: #ba9a67;
+    margin: 14px 35px 14px 52px;
+}
+.env_info_box .env_right{
+    margin:0 25px ;
+}
+.env_info_box .env_right img{
+    vertical-align: baseline;
+}
+.env_site{
+    width: 100%;
+    height: 78%;
+    background-color: #f3f3f3;
+    position: relative;
+}
+.env_site_play{
+    height: 100%;
+}
+.env_left_btn,.env_right_btn{
+    width: 42px;
+    height: 72px;
+    position: absolute;
+}
+.env_left_btn{
+    background: url("../img/env_left_btn.png") no-repeat;
+    top: 50%;
+    margin-top: -21px;
+    left: 30px;
+}
+.env_right_btn{
+    background: url("../img/env_right_btn.png") no-repeat;
+    top: 50%;
+    margin-top: -21px;
+    right: 30px;
+}
+.env_site_nav{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: rgba(85,85,85,0.7);
+    position: absolute;
+    bottom: 0;
+    padding-left: 35px;
+}
+.env_site_nav a{
+    font-size: 16px;
+    color: #b6b6b6;
+}
+.env_site_nav a:focus{
+    color: #ffffff;
+}
+.env_site_play ul{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.env_site_play ul li{
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
