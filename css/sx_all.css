@@ -105,6 +105,7 @@ body{
     top: 0;
     left: 0;
     z-index: 999;
+    background-color: #ffffff;
 }
 .sx_nav_logo{
     width: 100px;
@@ -133,7 +134,7 @@ body{
     font-size: 18px;
     color: #666666;
 }
-.sx_nav_ul li a:focus{
+.sx_nav_ul li .nav_active{
     color: #ba9a67;
 }
 /*环境信息*/
@@ -147,12 +148,15 @@ body{
     width: 100%;
     height: 80px;
     line-height: 80px;
-    background: url("../img/box_pic.png") no-repeat 100%;
+    background: url("../img/box_pic.png") no-repeat;
     margin: 0 auto;
     padding-left: 33px;
     margin-bottom: 20px;
+    background-size: 100% 100%;
 }
 .env_info_box span{
+    display: inline-block;
+    height: 100%;
     color: #ba9a67;
     margin: 0 15px;
     float: left;
@@ -211,6 +215,8 @@ body{
     position: absolute;
     bottom: 0;
     padding-left: 35px;
+    font-size: 16px;
+    color: #b6b6b6;
 }
 .env_site_nav a{
     font-size: 16px;
@@ -220,13 +226,63 @@ body{
     color: #ffffff;
 }
 .env_site_play ul{
-    width: 100%;
+    width: 400%;
     height: 100%;
     overflow: hidden;
 }
 .env_site_play ul li{
-    width: 100%;
+    width: 25%;
     height: 100%;
     float: left;
     text-align: center;
+}
+.num{
+    text-align: center;
+    margin-top: 600px;
+    padding-top: 300px;
+}
+/*重点文物信息*/
+.important_relics_info{
+    width: 82%;
+    height: 100%;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+.important_relics_show{
+    width: 100%;
+    height: 200px;
+    background: url("../img/important_relics_show.png") no-repeat;
+    position: relative;
+    padding:40px 20px 40px  150px;
+    overflow: hidden;
+}
+.important_font{
+    position: absolute;
+    top: 40px;
+    left: 80px;
+}
+.important_relics_show ul{
+    height: 100%;
+}
+.important_relics_show ul li{
+    width: 193px;
+    height: 135px;
+    float: left;
+    margin: 0 10px;
+}
+.important_relics_show ul li img{
+    width: 100%;
+    height: 100%;
+}
+.important_right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.important_relics_img{
+    width: 100%;
+    overflow: hidden;
+}
+.important_relics_img ul{
+    position: relative;
 }
