@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/sx_all.css">
     <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="../js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.countup.min.js"></script>
     <script type="text/javascript" src="../js/sx_all.js"></script>
 </head>
 <body>
@@ -22,7 +24,190 @@
     </div>
     <div id="fullPageDiv">
         <div class="section">
-
+            <div id="navigation"></div>
+            <div id="basic_info">
+                <div class="basic_info_top">
+                    <div>
+                        文物总数：
+                        <span class="counter">271300</span>
+                        &nbsp;件
+                    </div>
+                    <div class="visit_num">
+                        参观人数累计：
+                        <span class="counter">1268000</span>
+                        &nbsp;人/
+                        今日：
+                        <span class="counter">26022</span>
+                        &nbsp;人
+                    </div>
+                    <div>WIFI链接：
+                        <span class="counter">10028</span>
+                        &nbsp;人
+                    </div>
+                </div>
+                <div class="basic_info_middle">
+                    <div class="left">
+                        <ul>
+                            <li class="basis">
+                                <span>按等级</span>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">33550</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">一级文物</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">553</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">二级文物</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">5800</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">三级文物</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">86</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">一般文物</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="basis">
+                                <span>按年代</span>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">52003</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">夏商周</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">152260</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">秦汉代</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">5237</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">唐宋元明清</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">82</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">现代文物</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="basis">
+                                <span>按保存状态</span>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter continue">6</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">继续修复</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter need">112</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">需要修复</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter">33550</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">不需要修复</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="word">
+                                    <div class="num">
+                                        <span class="counter finish">1234</span>
+                                        <span class="a">&nbsp;&nbsp;件</span>
+                                    </div>
+                                    <span class="name">已修复</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            <div>
+                                <img src="../img/visitor_left.png"/>
+                                <span>特展人流情况图</span>
+                                <img src="../img/visitor_right.png"/>
+                            </div>
+                        </div>
+                        <div class="content"></div>
+                        <div class="footer">
+                            <span>1</span>
+                            <span>/3</span>
+                            <div class="img">下一页</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="basic_info_bottom">
+                    <ul>
+                        <li style="background: url('../img/video1.png')">
+                            <img src="../img/video.png"/>
+                            <div class="mask"></div>
+                        </li>
+                        <li style="background: url('../img/video2.png')">
+                            <img src="../img/video.png"/>
+                            <div class="mask"></div>
+                        </li>
+                        <li style="background: url('../img/video3.png')">
+                            <img src="../img/video.png"/>
+                            <div class="mask"></div>
+                        </li>
+                        <li style="background: url('../img/video4.png')">
+                            <img src="../img/video.png"/>
+                            <div class="mask"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="section">
             <div class="env_info">

@@ -97,6 +97,7 @@ body{
     cursor: pointer;
 }
 /*文物基本信息*/
+/*TX*/
 .sx_nav{
     width: 100%;
     height: 80px;
@@ -136,6 +137,188 @@ body{
 }
 .sx_nav_ul li .nav_active{
     color: #ba9a67;
+}
+/*HZY*/
+#navigation{
+    width: 100%;
+    height: 80px;
+}
+#basic_info{
+    width: 100%;
+}
+.basic_info_top{
+    width: 82%;
+    height: 8.4%;
+    margin: 20px auto;
+    background: url("../img/frame.png");
+    background-size: 100% 100%;
+}
+.basic_info_top div{
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ba9a67;
+}
+.basic_info_top .visit_num{
+    width: 40%;
+}
+.basic_info_top div span{
+    font-weight: bold;
+    font-size: 25px;
+}
+.basic_info_middle{
+    width: 82%;
+    height: 57%;
+    margin: 20px auto;
+    background: url("../img/basic_mid_bg.png");
+    background-size: 100% 100%;
+}
+.basic_info_middle .left{
+    width: 73%;
+    height: 100%;
+    display: block;
+    float: left;
+    padding: 30px;
+}
+.basic_info_middle .left ul{
+    width: 100%;
+    height:33.3%;
+    color: #fff;
+    display: inline-block;
+}
+.basic_info_middle .left ul li{
+    height: 100%;
+    width: 24%;
+    display: flex;
+    align-items: center;
+    float: left;
+    position: relative;
+}
+.basic_info_middle .left ul .basis{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    font-size: 18px;
+    margin: 0;
+}
+.basic_info_middle .left ul .counter{
+    font-weight: bold;
+    font-size: 35px;
+    background-color: rgba(134,93,65,0.3);
+}
+.basic_info_middle .left ul .continue{
+    background-color: rgba(246,110,0,0.3);
+}
+.basic_info_middle .left ul .need{
+    background-color: rgba(218,50,11,0.3);
+}
+.basic_info_middle .left ul .finish{
+    background-color: rgba(0,126,255,0.3);
+}
+.basic_info_middle .left ul .word{
+    margin: auto;
+}
+.basic_info_middle .left ul .name{
+    display: block;
+    text-align: center;
+}
+.basic_info_middle .right{
+    width: 27%;
+    height: 100%;
+    display: block;
+    float: left;
+    background: url("../img/divide.png") no-repeat left center;
+    padding: 10px;
+}
+.basic_info_middle .right .title{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.basic_info_middle .right .title div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #fff;
+}
+.basic_info_middle .right .title span{
+    margin: 0 5px;
+}
+.basic_info_middle .right .content{
+    width: 100%;
+    height: 61%;
+    border: 1px solid #fff;
+}
+.basic_info_middle .right .footer{
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.basic_info_middle .right .footer span{
+    float: left;
+}
+.basic_info_middle .right .footer span:nth-child(2){
+    margin-right: 10px;
+}
+.basic_info_middle .right .footer .img{
+    width: 108px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 28px;
+    background: url(../img/page.png) no-repeat;
+    float: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+.basic_info_bottom{
+    width: 82%;
+    height: 25%;
+    margin: 20px auto;
+}
+.basic_info_bottom ul{
+    width: 100%;
+    height: 100%;
+}
+.basic_info_bottom ul li{
+    width: 24%;
+    height: 100%;
+    float: left;
+    margin-right: 1.3%;
+    position: relative;
+}
+.basic_info_bottom ul li:last-child{
+    margin-right: 0;
+    float: right;
+}
+.basic_info_bottom ul li img{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 100;
+    opacity: 0.5;
+}
+.basic_info_bottom ul li .mask{
+    width: 100%;
+    height: 100%;
+    background: url("../img/opacity-75.png");
+    transform: scale(0);
+    transition: 0.8s;
+}
+.basic_info_bottom ul li:hover .mask{
+    transform: scale(1);
+    transition: 0.8s;
+}
+.basic_info_bottom ul li:hover img {
+    opacity: 1;
+    transition: 1s;
 }
 /*环境信息*/
 .env_info{
@@ -236,11 +419,7 @@ body{
     float: left;
     text-align: center;
 }
-.num{
-    text-align: center;
-    margin-top: 600px;
-    padding-top: 300px;
-}
+
 /*重点文物信息*/
 .important_relics_info{
     width: 82%;

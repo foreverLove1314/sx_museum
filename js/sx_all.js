@@ -3,24 +3,22 @@ $(function () {
         verticalCentered:false,//内容不居中
         afterLoad:function(anchorLink, index){
                 if(index==1){
-                    $('#first_page').height($(window).height());//高度自适应浏览器窗口高度
-                    var li = $('#first_page .left_info .title');
-                    for (var i=0;i<=li.length;i++){
-                        li.eq(i).delay(i*600).animate({top:i*120+200,opacity:1},2000);
-                    }
-                    $('#first_page .logo').delay(3600).animate({bottom:80,opacity:1},2500);
+
                 }
          }
     });
+    /*文物基本信息*/
     //导航栏跳转
     $(".sx_nav_ul li a").click(function () {
         $(".sx_nav_ul li a").removeClass("nav_active");//移除其他导航标签的选中样式
         $(this).addClass("nav_active");//当前标签添加选中样式
         var nav_item=$(this).parents("li").index();//获取被点击元素父元素的下标
-        console.log(nav_item)
         //滚动到网站的被选中对应的屏
         $.fn.fullpage.moveTo((nav_item+1), 0);//
     })
+    $('#basic_info').height($(window).height()-80);
+    $('.counter').countUp(); //数字滚动
+    /*环境信息*/
     // 环境信息的环境场轮播
     var envSiteLen=$(".env_site_play ul li").length;
     $(".env_left_btn").click(function () {//环境场向左切换
@@ -36,4 +34,5 @@ $(function () {
     //文物走马灯播放效果
     var show_li=$(".important_relics_show ul li").length;
     $(".important_relics_show ul").css("width",show_li*(193+20)+"px");
+
 });
