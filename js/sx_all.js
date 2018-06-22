@@ -34,5 +34,19 @@ $(function () {
     //文物走马灯播放效果
     var show_li=$(".important_relics_show ul li").length;
     $(".important_relics_show ul").css("width",show_li*(193+20)+"px");
-
+    var runNum=0;//控制容器不停移动的计数
+    var runTime="";//申明一个定时器
+    var runUlWidth=$(".important_relics_show ul").width();//容器ul的width
+    var runLiWidth=$(".important_relics_show ul li").width();//容器li的width
+    function importantRun(){
+        runNum++;
+        $(".important_relics_img ul").css({"left":(-1*runNum)+"px"})
+        if(Math.abs(runNum)%(runLiWidth+40)==0){
+            // $(".important_relics_img ul").css("left",0);
+            $(".important_relics_show ul").append($(".important_relics_show ul li").eq(0));
+            $(".important_relics_show ul li").eq(0).remove();
+            runNum=0;
+        }
+    }
+    runTime=setInterval(importantRun,50);
 });
