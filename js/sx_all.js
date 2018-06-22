@@ -3,7 +3,7 @@ $(function () {
         verticalCentered:false,//内容不居中
         afterLoad:function(anchorLink, index){
                 if(index==1){
-
+                    $()
                 }
          }
     });
