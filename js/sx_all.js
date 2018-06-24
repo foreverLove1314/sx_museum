@@ -32,21 +32,30 @@ $(function () {
         $moveLi.prependTo($(".env_site_play ul"));
     })
     //文物走马灯播放效果
-    var show_li=$(".important_relics_show ul li").length;
-    $(".important_relics_show ul").css("width",show_li*(193+20)+"px");
+    var show_li=$("#show_one li").length;
+    $(".important_relics_show ul").css("width",show_li*(193+20)+"px");//动态设置ul的宽度
     var runNum=0;//控制容器不停移动的计数
     var runTime="";//申明一个定时器
     var runUlWidth=$(".important_relics_show ul").width();//容器ul的width
     var runLiWidth=$(".important_relics_show ul li").width();//容器li的width
+    $(".important_relics_img").width(runUlWidth*2);//设置放置图片外层容器宽度
+    $("#show_two").html($("#show_one").html())//复制第一个容器的所有图片,到第二个容器中
     function importantRun(){
-        runNum++;
-        $(".important_relics_img ul").css({"left":(-1*runNum)+"px"})
-        if(Math.abs(runNum)%(runLiWidth+40)==0){
-            // $(".important_relics_img ul").css("left",0);
-            $(".important_relics_show ul").append($(".important_relics_show ul li").eq(0));
-            $(".important_relics_show ul li").eq(0).remove();
-            runNum=0;
-        }
+        // 用两个同样的图片容器，当滚动一个容器宽度时，滚动距离减去该容器宽度,
+        // 并将该值设置为此时的滚动初始值，达到无缝循环播放的效果
+        if($("#show_two").width()-$(".important_show_box").scrollLeft()<=0){
+            var startRoll=$(".important_show_box").scrollLeft()-$("#show_one").width();
+            $(".important_show_box").scrollLeft(startRoll);//重置初始滚动位置
+            runNum=startRoll;//重置循环值
+        }else {
+            runNum++;//每次滚动一像素
+            $(".important_show_box").scrollLeft(runNum);
     }
-    runTime=setInterval(importantRun,50);
+    }
+    runTime=setInterval(importantRun,20);
+    $(".important_show_box").hover(function () {
+        clearInterval(runTime);
+    },function () {
+        runTime=setInterval(importantRun,20);
+    })
 });
