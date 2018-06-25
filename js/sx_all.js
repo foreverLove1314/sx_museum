@@ -34,29 +34,6 @@ $(function () {
         $moveLi.prependTo($(".env_site_play ul"));
     })
     //文物走马灯播放效果
-    /*重点文物信息*/
-    //修复进度完成显示
-    var total_width = $('.important_relics_info .schedule_bg').width();
-    var $ok_width = $('.important_relics_info .schedule');
-    $('.important_relics_info .schedule').each(function () {
-
-        if($(this).width()==total_width){
-            $(this).siblings('i').show();
-        }else{
-            $(this).siblings('i').hide();
-        }
-    })
-    // for (var i=0;i<ok_width.length;i++){
-    //     console.log(ok_width.eq(i).width());
-    //     console.log(total_width);
-    //     if(ok_width.eq(i).width()==total_width){
-    //         $('.important_relics_info .schedule_bg').eq(i).find('.ok').show();
-    //     }
-    //     else{
-    //         $('.important_relics_info .schedule_bg').eq(i).find('.ok').hide();
-    //     }
-    // }
-
     var show_li=$("#show_one li").length;
     $(".important_relics_show ul").css("width",show_li*(193+20)+"px");//动态设置ul的宽度
     var runNum=0;//控制容器不停移动的计数
@@ -66,16 +43,6 @@ $(function () {
     $(".important_relics_img").width(runUlWidth*2);//设置放置图片外层容器宽度
     $("#show_two").html($("#show_one").html())//复制第一个容器的所有图片,到第二个容器中
     function importantRun(){
-        // 用两个同样的图片容器，当滚动一个容器宽度时，滚动距离减去该容器宽度,
-        // 并将该值设置为此时的滚动初始值，达到无缝循环播放的效果
-        // if($("#show_two").width()-$(".important_show_box").scrollLeft()<=0){
-        //     var startRoll=$(".important_show_box").scrollLeft()-$("#show_one").width();
-        //     $(".important_show_box").scrollLeft(startRoll);//重置初始滚动位置
-        //     runNum=startRoll;//重置循环值
-        // }else {
-        //     runNum++;//每次滚动一像素
-        //     $(".important_show_box").scrollLeft(runNum);
-        // }
         //当元素偏移量滚动完一个容器宽度时，left值归零，达到无缝跑马灯效果
         if($("#show_one").width()-Math.abs(parseInt($(".important_relics_img").css("left")))<=0){
             runNum=0;
@@ -91,6 +58,16 @@ $(function () {
     },function () {//鼠标移除，启动跑马灯动画
         runTime=setInterval(importantRun,20);
     })
+    /*重点文物信息*/
+    //修复进度完成显示
+    var total_width = $('.important_relics_info .schedule_bg').width();
+    var $ok_width = $('.important_relics_info .schedule');
+    $('.important_relics_info .schedule').each(function () {
 
-
+        if($(this).width()==total_width){
+            $(this).siblings('i').show();
+        }else{
+            $(this).siblings('i').hide();
+        }
+    })
 });
