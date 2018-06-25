@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>三峡博物馆网站（展示）</title>
     <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <link href="../css/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/sx_all.css">
     <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+    <!--单屏滚动-->
     <script type="text/javascript" src="../js/jquery.fullPage.js"></script>
+    <!--数字滚动-->
     <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="../js/jquery.countup.min.js"></script>
+    <!--三峡页面js-->
     <script type="text/javascript" src="../js/sx_all.js"></script>
 </head>
 <body>
@@ -319,13 +323,16 @@
                                     <li><img src="../img/important_pic4.jpg" alt="无法显示"></li>
                                     <li><img src="../img/important_pic5.jpg" alt="无法显示"></li>
                                     <li><img src="../img/important_pic6.jpg" alt="无法显示"></li>
+                                    <li><img src="../img/important_pic1.jpg" alt="无法显示"></li>
+                                    <!--<li><img src="../img/important_pic2.jpg" alt="无法显示"></li>-->
+                                    <!--<li><img src="../img/important_pic3.jpg" alt="无法显示"></li>-->
                                 </ul>
                                 <ul id="show_two">
                                 </ul>
                             </div>
                         </div>
-                        <img src="../img/important_right.png" alt="无法显示" class="important_right">
                     </div>
+                    <img src="../img/important_right.png" alt="无法显示" class="important_right">
                 </div>
                 <div class="form">
                     <table>
@@ -450,11 +457,33 @@
             </div>
         </div>
         <div class="section">
-            <h1 class="num">第四屏</h1>
+            <div class="creative_relics">
+                <div class="env_info_box">
+                    <span>室外气象信息：<img src="../img/env_temp.png" alt="">&nbsp;&nbsp;27℃</span>
+                    <span><img src="../img/env_rain.png" alt="无法显示">&nbsp;&nbsp;58%</span>
+                    <span><img src="../img/env_sun.png" alt="无法显示" style="vertical-align: super">&nbsp;&nbsp;&nbsp;晴天</span>
+                    <span><img src="../img/env_pm2.png" alt="无法显示">&nbsp;&nbsp;&nbsp;1.85ug/m<sup>3</sup></span>
+                    <span><img src="../img/env_wind.png" alt="无法显示">&nbsp;&nbsp;&nbsp;南风 2.5m/s</span>
+                    <i class="verticalLine"></i>
+                    <span class="env_right">馆内环境信息：远古巴渝展厅&nbsp;&nbsp;35℃&nbsp;&nbsp;<img src="../img/env_red_top.png" alt="无法显示"></span>
+                    <span class="env_right">历代瓷器展厅&nbsp;&nbsp;32℃&nbsp;&nbsp;<img src="../img/env_down.png" alt="无法显示"></span>
+                </div>
+                <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+                        data-setup="{}">
+                    <source src="../video/mov_bbb.mp4" type='video/mp4'>
+                    <source src="" type='video/webm'>
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+            </div>
         </div>
         <div class="section">
             <h1 class="num">第五屏</h1>
         </div>
     </div>
+    <!--video.js插件-->
+    <script src="../js/video.js"></script>
 </body>
 </html>

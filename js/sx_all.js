@@ -3,8 +3,10 @@ $(function () {
         verticalCentered:false,//内容不居中
         afterLoad:function(anchorLink, index){
                 if(index==1){
-                    $()
+
                 }
+                //滚动某一屏，导航栏对应添加样式
+                $(".sx_nav_ul li a").removeClass("nav_active").eq(index-1).addClass("nav_active");
          }
     });
     /*文物基本信息*/
@@ -43,19 +45,29 @@ $(function () {
     function importantRun(){
         // 用两个同样的图片容器，当滚动一个容器宽度时，滚动距离减去该容器宽度,
         // 并将该值设置为此时的滚动初始值，达到无缝循环播放的效果
-        if($("#show_two").width()-$(".important_show_box").scrollLeft()<=0){
-            var startRoll=$(".important_show_box").scrollLeft()-$("#show_one").width();
-            $(".important_show_box").scrollLeft(startRoll);//重置初始滚动位置
-            runNum=startRoll;//重置循环值
-        }else {
-            runNum++;//每次滚动一像素
-            $(".important_show_box").scrollLeft(runNum);
-    }
+        // if($("#show_two").width()-$(".important_show_box").scrollLeft()<=0){
+        //     var startRoll=$(".important_show_box").scrollLeft()-$("#show_one").width();
+        //     $(".important_show_box").scrollLeft(startRoll);//重置初始滚动位置
+        //     runNum=startRoll;//重置循环值
+        // }else {
+        //     runNum++;//每次滚动一像素
+        //     $(".important_show_box").scrollLeft(runNum);
+        // }
+        //当元素偏移量滚动完一个容器宽度时，left值归零，达到无缝跑马灯效果
+        if($("#show_one").width()-Math.abs(parseInt($(".important_relics_img").css("left")))<=0){
+            runNum=0;
+            $(".important_relics_img").css("left",0);
+        }else{
+            runNum++;
+            $(".important_relics_img").css("left",-1*runNum);
+        }
     }
     runTime=setInterval(importantRun,20);
-    $(".important_show_box").hover(function () {
+    $(".important_show_box").hover(function () {//鼠标移入停止跑马灯动画
         clearInterval(runTime);
-    },function () {
+    },function () {//鼠标移除，启动跑马灯动画
         runTime=setInterval(importantRun,20);
     })
+    // 创意文物信息
+
 });
