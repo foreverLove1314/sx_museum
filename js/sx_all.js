@@ -34,5 +34,26 @@ $(function () {
     //文物走马灯播放效果
     var show_li=$(".important_relics_show ul li").length;
     $(".important_relics_show ul").css("width",show_li*(193+20)+"px");
+    /*重点文物信息*/
+    //修复进度完成显示
+    var total_width = $('.important_relics_info .schedule_bg').width();
+    var $ok_width = $('.important_relics_info .schedule');
+    $('.important_relics_info .schedule').each(function () {
 
+        if($(this).width()==total_width){
+            $(this).siblings('i').show();
+        }else{
+            $(this).siblings('i').hide();
+        }
+    })
+    // for (var i=0;i<ok_width.length;i++){
+    //     console.log(ok_width.eq(i).width());
+    //     console.log(total_width);
+    //     if(ok_width.eq(i).width()==total_width){
+    //         $('.important_relics_info .schedule_bg').eq(i).find('.ok').show();
+    //     }
+    //     else{
+    //         $('.important_relics_info .schedule_bg').eq(i).find('.ok').hide();
+    //     }
+    // }
 });

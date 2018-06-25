@@ -488,33 +488,27 @@ body{
     height: 57%;
     margin-top: 20px;
     border: 2px solid #ba9a67;
-    padding: 10px 20px;
-    overflow: hidden;
+    padding: 10px 0;
 }
-.important_relics_info .form .collection_num{
-    width: 5%;
+.important_relics_info .form .scroll{
+    overflow-y: scroll;
+    height: 400px;
 }
-.important_relics_info .form .relic_name{
-    width: 20%;
+.important_relics_info .form .scroll::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
 }
-.important_relics_info .form .grade{
-    width: 5%;
-}
-.important_relics_info .form .year{
-    width: 10%;
-}
-.important_relics_info .form .material{
-    width: 10%;
-}
-.important_relics_info .form .repair{
-    text-align: center;
-    width: 14%;
+.important_relics_info .form .scroll::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: rgba(186,154,103,0.7);
 }
 .important_relics_info .form table{
     width: 100%;
+}
+.important_relics_info .form table thead,.important_relics_info .form table tbody tr{
     text-align: left;
 }
-.important_relics_info .form table tbody tr:hover{
+.important_relics_info .form  .scroll table tr:hover{
     background: url("../img/tr_bg.png");
 }
 .important_relics_info .form table th{
@@ -532,10 +526,9 @@ body{
     width: 88%;
     height: 21px;
     background: url("../img/schedule_bg.png");
-    float: left;
+    position: relative;
 }
 .important_relics_info .form .schedule{
-    width: 70%;
     height: 100%;
     background-color: #ba9a67;
 }
@@ -543,7 +536,15 @@ body{
     display: block;
     width: 21px;
     height: 21px;
-    float: right;
+    position: absolute;
+    top: 0;
+    right: -21px;
     background: url("../img/repair_ok.png");
     background-size: 100% 100%;
+}
+.important_relics_info .form .scroll table tbody tr td:last-child{
+    padding-right: 8px;
+}
+.important_relics_info .form .scroll table tbody tr td:first-child{
+    padding-left: 20px;
 }
