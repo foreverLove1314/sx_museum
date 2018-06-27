@@ -19,16 +19,16 @@
     <div class="sx_nav">
         <a href="#index.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
         <ul class="sx_nav_ul">
-            <li><a href="javascript:void(0);" class="nav_active">文物基本信息</a></li>
-            <li><a href="javascript:void(0);">环境信息</a></li>
-            <li><a href="javascript:void(0);">重点文物信息</a></li>
-            <li><a href="javascript:void(0);">创意文物信息</a></li>
-            <li><a href="javascript:void(0);">博物馆舆情</a></li>
+            <li><a class="nav_active">文物基本信息</a></li>
+            <li><a>环境信息</a></li>
+            <li><a>重点文物信息</a></li>
+            <li><a>创意文物信息</a></li>
+            <li><a>博物馆舆情</a></li>
         </ul>
     </div>
+    <!--<div class="model_div"></div>-->
     <div id="fullPageDiv">
-        <div class="section">
-            <div id="navigation"></div>
+        <div class="section active">
             <div id="basic_info">
                 <div class="basic_info_top">
                     <div>
@@ -470,7 +470,7 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" id="page4">
             <div class="creative_relics">
                 <div class="env_info_box">
                     <span>室外气象信息：<img src="../img/env_temp.png" alt="">&nbsp;&nbsp;27℃</span>
@@ -482,16 +482,36 @@
                     <span class="env_right">馆内环境信息：远古巴渝展厅&nbsp;&nbsp;35℃&nbsp;&nbsp;<img src="../img/env_red_top.png" alt="无法显示"></span>
                     <span class="env_right">历代瓷器展厅&nbsp;&nbsp;32℃&nbsp;&nbsp;<img src="../img/env_down.png" alt="无法显示"></span>
                 </div>
-                <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
-                        data-setup="{}">
-                    <source src="../video/mov_bbb.mp4" type='video/mp4'>
-                    <source src="" type='video/webm'>
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a web browser that
-                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                </video>
+                <div class="videoOutBox" style="float: left;">
+                    <div class="videoBox" >
+                        <video id="my-video" class="video-js" controls preload="auto"
+                               data-setup="{}" >
+                            <source src="../video/mov_bbb.mp4" type='video/mp4'>
+                            <source src="" type='video/webm'>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+                        <div class="popup_btn"></div>
+                    </div>
+                </div>
+                <div class="videoOutBox" style="float: right;">
+                    <div class="videoBox">
+                        <video id="" class="video-js" controls preload="auto"
+                               data-setup="{}" >
+                            <source src="../video/mov_bbb.mp4" type='video/mp4'>
+                            <source src="" type='video/webm'>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                        </video>
+                        <div class="popup_btn"></div>
+                    </div>
+                </div>
             </div>
+            <div class="model_div"></div>
         </div>
         <div class="section">
             <h1 class="num">第五屏</h1>

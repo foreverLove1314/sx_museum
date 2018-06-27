@@ -29,73 +29,6 @@ table {
     border-collapse:collapse;
     border-spacing:0;
 }
-/*首页*/
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-#first_page{
-    width:100%;
-    height: 100%;
-    background: url('../img/first.png') no-repeat;
-    background-size:100% 100%;
-}
-.left_info{
-    position: relative;
-    left: 12%;
-    width: 30%;
-    height: 100%;
-    display: inline-block;
-    bottom: 0;
-}
-.summary{
-    height: 100%;
-}
-#first_page .left_info .title{
-    list-style: none;
-    height:40px;
-    font-size:24px;
-    color: #ba9a67;
-    font-weight: 500;
-    position: absolute;
-    bottom: -40px;
-    opacity: 0;
-}
-#first_page .left_info .title:hover{
-    color: #75553f;
-}
-.triangle {
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-left-color:#ba9a67;
-    display: inline-block;
-}
-#first_page .left_info .title:hover .triangle{
-    border-left-color: #75553f;
-}
-#first_page .left_info .title .word{
-    display: inline-block;
-    margin: 0;
-    height: 40px;
-    line-height: 40px;
-    float: right;
-    text-decoration: none;
-    cursor: pointer;
-}
-.logo{
-    position: absolute;
-    left: 50%;
-    bottom: -65px;
-    width: 136px;
-    height: 65px;
-    margin: auto;
-    background: url("../img/logo.png");
-    opacity: 0;
-    cursor: pointer;
-}
 /*文物基本信息*/
 /*TX*/
 .sx_nav{
@@ -343,7 +276,7 @@ body{
 .env_info{
     width: 82%;
     height: 100%;
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     margin: 0 auto;
 }
 .env_info_box{
@@ -442,7 +375,7 @@ body{
 .important_relics_info{
     width: 82%;
     height: 100%;
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     margin: 0 auto;
 }
 .important_relics_box{
@@ -568,8 +501,31 @@ body{
 .creative_relics{
     width: 82%;
     height: 100%;
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     margin: 0 auto;
+    position: relative;
+}
+.videoOutBox{
+    width: 48%;
+    height: 420px;
+}
+.videoBox{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.videoContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -210px;
+    margin-left: -400px;
+    z-index: 999;
+}
+.video-js{
+    width: 100%;
+    height: 100%;
 }
 .video-js .vjs-big-play-button{
     width: 100px;
@@ -591,6 +547,27 @@ body{
 }
 .video-js:hover .vjs-big-play-button,.vjs-tech:focus .video-js .vjs-big-play-button{
     background-color: rgba(115, 133, 159, 0);
+}
+.popup_btn{
+    width: 100px;
+    height: 100px;
+    background: url("../img/video_play.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+.model_div{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    /*z-index: 1000;*/
 }
 @media only screen and (max-width:1600px) {
     .env_info_box{

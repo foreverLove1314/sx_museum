@@ -1,0 +1,73 @@
+/*css样式初始化*/
+html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    border: none;
+}
+a,input,button{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover,a:focus{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/*导航栏*/
+.sx_nav{
+    width: 100%;
+    height: 80px;
+    border-bottom:1px solid #dcdcdc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #ffffff;
+}
+.sx_nav_logo{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    margin: 13px 0 13px 33px;
+    float: left;
+}
+.sx_nav_logo img{
+    width: 100%;
+    height: 100%;
+}
+.sx_nav_ul{
+    float: left;
+    margin-left: 210px;
+}
+.sx_nav_ul li{
+    line-height: 80px;
+    margin:0  50px;
+    float: left;
+}
+.sx_nav_ul li:first-child{
+    margin-left: 0;
+}
+.sx_nav_ul li a{
+    font-size: 18px;
+    color: #666666;
+}
+.sx_nav_ul li .nav_active{
+    color: #ba9a67;
+}
+/*主体样式*/

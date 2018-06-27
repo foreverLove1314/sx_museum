@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>三峡博物馆</title>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
     <style type="text/css">
-        body,ul{
+        /*css样式初始化*/
+        html, body, div, span, object, iframe,h1, h2,
+        h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+        em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+        ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+        tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+        figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+        audio, video{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        body{
             overflow: hidden;
         }
         #first_page{
@@ -57,8 +67,11 @@
             float: right;
             text-decoration: none;
             cursor: pointer;
+            color: #ba9a67;
         }
-
+        #first_page .left_info .title .word:hover{
+            color: #75553f;
+        }
         .logo{
             position: absolute;
             left: 50%;
@@ -72,6 +85,7 @@
         }
     </style>
     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 </head>
 <body>
     <div class="all">
@@ -80,23 +94,23 @@
                  <ul class="summary">
                      <li class="title">
                          <span class="triangle"></span>
-                         <a herf="#" class="word">文物基本信息</a>
+                         <a href="javascript:void (0);" class="word">文物基本信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a herf="#" class="word">环境信息</a>
+                         <a href="javascript:void (0);" class="word">环境信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a herf="#" class="word">重点文物信息</a>
+                         <a href="javascript:void (0);" class="word">重点文物信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a herf="#" class="word">创意文物信息</a>
+                         <a href="javascript:void (0);" class="word">创意文物信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a herf="#" class="word">博物馆舆情信息</a>
+                         <a href="javascript:void (0);" class="word">博物馆舆情信息</a>
                      </li>
                  </ul>
             </div>
@@ -105,8 +119,9 @@
     </div>
 </body>
 <script type="text/javascript">
-    $('#first_page').height($(window).height());//高度自适应浏览器窗口高度
+
     $(function (){
+        $('#first_page').height($(window).height());//高度自适应浏览器窗口高度
         var li = $('#first_page .left_info .title');
         for (var i=0;i<=li.length;i++){
             li.eq(i).delay(i*600).animate({top:i*120+200,opacity:1},2000);

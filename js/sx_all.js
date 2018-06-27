@@ -1,7 +1,9 @@
 $(function () {
     $("#fullPageDiv").fullpage({//fullpage.js的初始配置
+        paddingTop: '100px',//顶部100px内间距
         verticalCentered:false,//内容不居中
         afterLoad:function(anchorLink, index){
+
                 if(index==1){
 
                 }
@@ -16,8 +18,8 @@ $(function () {
         $(this).addClass("nav_active");//当前标签添加选中样式
         var nav_item=$(this).parents("li").index();//获取被点击元素父元素的下标
         //滚动到网站的被选中对应的屏
-        $.fn.fullpage.moveTo((nav_item+1), 0);//
-    })
+        $.fn.fullpage.moveTo((nav_item+1), 0);
+    });
     $('#basic_info').height($(window).height()-80);
     $('.counter').countUp(); //数字滚动
     /*环境信息*/
@@ -25,14 +27,14 @@ $(function () {
     var envSiteLen=$(".env_site_play ul li").length;
     $(".env_left_btn").click(function () {//环境场向左切换
         $(".env_site_play ul li").eq(0).appendTo($(".env_site_play ul"));
-    })
+    });
     $(".env_right_btn").click(function () {//环境场向右切换
         $(".env_site_play ul li").eq(envSiteLen-1).prependTo($(".env_site_play ul"));
-    })
+    });
     $(".env_site_nav a").click(function () {
         var $moveLi=$(".env_site_play ul li[li-item="+$(this).index()+"]")//获取被点中的元素相对应的场
         $moveLi.prependTo($(".env_site_play ul"));
-    })
+    });
     //文物走马灯播放效果
     var show_li=$("#show_one li").length;
     $(".important_relics_show ul").css("width",show_li*(193+20)+"px");//动态设置ul的宽度
@@ -51,13 +53,13 @@ $(function () {
             runNum++;
             $(".important_relics_img").css("left",-1*runNum);
         }
-    }
+    };
     runTime=setInterval(importantRun,20);
     $(".important_show_box").hover(function () {//鼠标移入停止跑马灯动画
         clearInterval(runTime);
     },function () {//鼠标移除，启动跑马灯动画
         runTime=setInterval(importantRun,20);
-    })
+    });
     /*重点文物信息*/
     //修复进度完成显示
     var total_width = $('.important_relics_info .schedule_bg').width();
@@ -69,5 +71,27 @@ $(function () {
         }else{
             $(this).siblings('i').hide();
         }
-    })
+    });
+    // 创意文物信息
+    // 视频播放
+    // var videoObj = videojs("videoId");
+    $(".popup_btn").click(function () {//点击播放按钮时，视频弹出
+        $.fn.fullpage.setAllowScrolling(false);//禁止页面滚动
+        $(".sx_nav").css("z-index",0);//设置导航栏层级
+        // $(this).parents(".videoOutBox").appendTo(".video_play_box");//移动被点击的视频
+        $(".model_div").css("display","block");//显示背景弹出层
+        $(this).parents(".videoOutBox").addClass("videoContent");//外层容器添加弹出样式
+        $(this).css("display","none");//隐藏弹出按钮
+    });
+    $(".model_div").click(function () {
+        $.fn.fullpage.setAllowScrolling(true);//启用页面滚动
+        $(this).css("display","none");//点击弹出层，关闭弹出状态
+        $(".sx_nav").css("z-index",999);//设置导航栏层级
+        $(".videoOutBox").removeClass("videoContent");//外层容器移除弹出样式
+        $(".popup_btn").css("display","block");//显示弹出按钮
+        $("video").each(function () {//停止播放视频
+            var videoId=videojs($(this).attr("id"));
+            videoId.pause();
+        })
+    });
 });
