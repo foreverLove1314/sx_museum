@@ -12,6 +12,8 @@
     <!--数字滚动-->
     <script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="../js/jquery.countup.min.js"></script>
+    <!--特展人流量统计-->
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
     <!--三峡页面js-->
     <script type="text/javascript" src="../js/sx_all.js"></script>
 </head>
@@ -183,11 +185,14 @@
                                 <img src="../img/visitor_right.png"/>
                             </div>
                         </div>
-                        <div class="content"></div>
+                        <div class="content" id="visitor_flowrate1"></div>
+                        <div class="content" id="visitor_flowrate2"></div>
+                        <div class="content" id="visitor_flowrate3"></div>
                         <div class="footer">
-                            <span>1</span>
+                            <span id="page_num">1</span>
                             <span>/3</span>
-                            <div class="img">下一页</div>
+                            <button class="img" id="last_page" style="display: none">上一页</button>
+                            <button class="img" id="next_page">下一页</button>
                         </div>
                     </div>
                 </div>
@@ -265,6 +270,9 @@
                         </li>
                     </ul>
                 </div>
+                <div class="video_play_mask">
+                    <div></div>
+                </div>
             </div>
         </div>
         <div class="section">
@@ -301,15 +309,23 @@
         </div>
         <div class="section">
             <div class="important_relics_info">
-                <div class="env_info_box">
-                    <span>室外气象信息：<img src="../img/env_temp.png" alt="">&nbsp;&nbsp;27℃</span>
-                    <span><img src="../img/env_rain.png" alt="无法显示">&nbsp;&nbsp;58%</span>
-                    <span><img src="../img/env_sun.png" alt="无法显示" style="vertical-align: super">&nbsp;&nbsp;&nbsp;晴天</span>
-                    <span><img src="../img/env_pm2.png" alt="无法显示">&nbsp;&nbsp;&nbsp;1.85ug/m<sup>3</sup></span>
-                    <span><img src="../img/env_wind.png" alt="无法显示">&nbsp;&nbsp;&nbsp;南风 2.5m/s</span>
-                    <i class="verticalLine"></i>
-                    <span class="env_right">馆内环境信息：远古巴渝展厅&nbsp;&nbsp;35℃&nbsp;&nbsp;<img src="../img/env_red_top.png" alt="无法显示"></span>
-                    <span class="env_right">历代瓷器展厅&nbsp;&nbsp;32℃&nbsp;&nbsp;<img src="../img/env_down.png" alt="无法显示"></span>
+                <div class="important_relics_info_top">
+                    <div>
+                        文物参观总人数：
+                        <span class="counter_roll">25800000</span>
+                        &nbsp;人
+                    </div>
+                    <div class="visit_num">
+                        今年参观人数：
+                        <span class="counter_roll">25720</span>
+                        &nbsp;人
+                        &nbsp;<img src="../img/env_red_top.png">
+                    </div>
+                    <div>同比去年参观人数：
+                        <span class="counter_roll">12788</span>
+                        &nbsp;人
+                        &nbsp;<img src="../img/env_down.png">
+                    </div>
                 </div>
                 <div class="important_relics_box">
                     <div class="important_relics_show">
@@ -519,5 +535,7 @@
     </div>
     <!--video.js插件-->
     <script src="../js/video.js"></script>
+    <!--echarts-->
+    <script type="text/javascript" src="../js/my_echarts.js"></script>
 </body>
 </html>

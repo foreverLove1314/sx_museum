@@ -5,7 +5,9 @@ $(function () {
         afterLoad:function(anchorLink, index){
 
                 if(index==1){
-
+                    $('.counter').countUp();
+                } else if(index==3){
+                    $('.counter_roll').countUp();//数字滚动
                 }
                 //滚动某一屏，导航栏对应添加样式
                 $(".sx_nav_ul li a").removeClass("nav_active").eq(index-1).addClass("nav_active");
@@ -18,10 +20,46 @@ $(function () {
         $(this).addClass("nav_active");//当前标签添加选中样式
         var nav_item=$(this).parents("li").index();//获取被点击元素父元素的下标
         //滚动到网站的被选中对应的屏
-        $.fn.fullpage.moveTo((nav_item+1), 0);
-    });
+        $.fn.fullpage.moveTo((nav_item+1), 0);//
+    })
+    //高度自适应窗口高度
     $('#basic_info').height($(window).height()-80);
-    $('.counter').countUp(); //数字滚动
+    $('.counter').countUp();//数字滚动
+    //特展人流量
+    var my_echarts = $('.basic_info_middle .right .content');
+    my_echarts.width($('.basic_info_middle .right').width()*1);
+    my_echarts.height($('.basic_info_middle .right').height()*0.61);
+    var page_num= 1;
+    //下一页
+    $('#next_page').click(function () {
+        page_num++;
+        $('#page_num').html(page_num);      //显示当前页码
+        for(var i=0;i<3;i++){
+            my_echarts.eq(i).hide();         //隐藏所有echarts
+        }
+        my_echarts.eq(page_num-1).show();    //显示当前echarts
+        $('#last_page').show();             //显示上一页按钮
+        if(page_num>=3){
+            page_num=3;
+            $('#page_num').html(page_num);  //如果页数大于3，则一直为3，并重置当前显示页码
+            $(this).hide();                 //下一页按钮隐藏
+        }
+    });
+    //上一页
+    $('#last_page').click(function () {
+        page_num--;
+        $('#page_num').html(page_num);
+        for(var i=0;i<3;i++){
+            my_echarts.eq(i).hide();
+        }
+        my_echarts.eq(page_num-1).show();
+        $('#next_page').show();
+        if(page_num<=1){
+            page_num=1;
+            $('#page_num').html(page_num);
+            $(this).hide();
+        }
+    });
     /*环境信息*/
     // 环境信息的环境场轮播
     var envSiteLen=$(".env_site_play ul li").length;
@@ -63,13 +101,11 @@ $(function () {
     /*重点文物信息*/
     //修复进度完成显示
     var total_width = $('.important_relics_info .schedule_bg').width();
-    var $ok_width = $('.important_relics_info .schedule');
     $('.important_relics_info .schedule').each(function () {
-
         if($(this).width()==total_width){
-            $(this).siblings('i').show();
+            $(this).next('i').show();           //宽度达到100%，当前的下一个元素(i标签)显示，i标签默认隐藏
         }else{
-            $(this).siblings('i').hide();
+            $(this).next('i').hide();
         }
     });
     // 创意文物信息
