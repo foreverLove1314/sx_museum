@@ -29,73 +29,6 @@ table {
     border-collapse:collapse;
     border-spacing:0;
 }
-/*首页*/
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-#first_page{
-    width:100%;
-    height: 100%;
-    background: url('../img/first.png') no-repeat;
-    background-size:100% 100%;
-}
-.left_info{
-    position: relative;
-    left: 12%;
-    width: 30%;
-    height: 100%;
-    display: inline-block;
-    bottom: 0;
-}
-.summary{
-    height: 100%;
-}
-#first_page .left_info .title{
-    list-style: none;
-    height:40px;
-    font-size:24px;
-    color: #ba9a67;
-    font-weight: 500;
-    position: absolute;
-    bottom: -40px;
-    opacity: 0;
-}
-#first_page .left_info .title:hover{
-    color: #75553f;
-}
-.triangle {
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-left-color:#ba9a67;
-    display: inline-block;
-}
-#first_page .left_info .title:hover .triangle{
-    border-left-color: #75553f;
-}
-#first_page .left_info .title .word{
-    display: inline-block;
-    margin: 0;
-    height: 40px;
-    line-height: 40px;
-    float: right;
-    text-decoration: none;
-    cursor: pointer;
-}
-.logo{
-    position: absolute;
-    left: 50%;
-    bottom: -65px;
-    width: 136px;
-    height: 65px;
-    margin: auto;
-    background: url("../img/logo.png");
-    opacity: 0;
-    cursor: pointer;
-}
 /*文物基本信息*/
 /*TX*/
 .sx_nav{
@@ -251,9 +184,16 @@ body{
     margin: 0 5px;
 }
 .basic_info_middle .right .content{
-    width: 100%;
-    height: 61%;
-    border: 1px solid #fff;
+    float: left;
+}
+#visitor_flowrate1{
+    display: block;
+}
+#visitor_flowrate2{
+    display: none;
+}
+#visitor_flowrate3{
+    display: none;
 }
 .basic_info_middle .right .footer{
     width: 100%;
@@ -269,12 +209,13 @@ body{
     margin-right: 10px;
 }
 .basic_info_middle .right .footer .img{
-    width: 108px;
+    width: 104px;
     height: 32px;
     line-height: 32px;
-    padding: 0 28px;
     background: url(../img/page.png) no-repeat;
+    border: none;
     float: left;
+    color: #fff;
     font-size: 15px;
     cursor: pointer;
 }
@@ -439,6 +380,29 @@ body{
     text-align: center;
 }
 /*重点文物信息*/
+.important_relics_info_top{
+    width: 100%;
+    height: 8.4%;
+    margin: 20px auto;
+    background: url(../img/frame.png);
+    background-size: 100% 100%;
+}
+.important_relics_info_top div{
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ba9a67;
+}
+.important_relics_info_top .visit_num{
+    width: 40%;
+}
+.important_relics_info_top div span{
+    font-weight: bold;
+    font-size: 25px;
+}
 .important_relics_info{
     width: 82%;
     height: 100%;
