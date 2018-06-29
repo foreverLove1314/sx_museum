@@ -14,12 +14,15 @@
     <script type="text/javascript" src="../js/jquery.countup.min.js"></script>
     <!--特展人流量统计-->
     <script type="text/javascript" src="../js/echarts.min.js"></script>
+    <!--视频播放-->
+    <script type="text/javascript" src="../js/plyr.js"></script>
+    <link rel="stylesheet" href="../css/plyr.css">
     <!--三峡页面js-->
     <script type="text/javascript" src="../js/sx_all.js"></script>
 </head>
 <body>
     <div class="sx_nav">
-        <a href="#index.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
+        <a href="../index.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
         <ul class="sx_nav_ul">
             <li><a class="nav_active">文物基本信息</a></li>
             <li><a>环境信息</a></li>
@@ -28,7 +31,15 @@
             <li><a>博物馆舆情</a></li>
         </ul>
     </div>
-    <!--<div class="model_div"></div>-->
+    <div class="video_play_mask">
+        <div class="video_play_container">
+            <div class="video">
+                <video controls="controls" src=""></video>
+                <script>plyr.setup();</script>
+            </div>
+            <button class="video_close"></button>
+        </div>
+    </div>
     <div id="fullPageDiv">
         <div class="section active">
             <div id="basic_info">
@@ -269,9 +280,6 @@
                             </div>
                         </li>
                     </ul>
-                </div>
-                <div class="video_play_mask">
-                    <div></div>
                 </div>
             </div>
         </div>
@@ -538,4 +546,5 @@
     <!--echarts-->
     <script type="text/javascript" src="../js/my_echarts.js"></script>
 </body>
+
 </html>

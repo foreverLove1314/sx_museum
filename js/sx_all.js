@@ -45,6 +45,21 @@ $(function () {
             $(this).hide();                 //下一页按钮隐藏
         }
     });
+    //视频
+    var video_src =['../video/1_0.mp4','../video/video2.mp4','../video/video3.mp4','../video/video4.mp4'];
+    var video_play =$('.basic_info_bottom ul li img');
+    video_play.click(function () {
+        $.fn.fullpage.setAllowScrolling(false);//禁止页面滚动
+        var video_index = $(this).parents('li').index();
+        $('.video_play_mask').fadeIn(1000);
+        $('.video_play_container .video video .plyr .plyr__play-large').show();
+        $('.video_play_container .video video').attr('src',video_src[video_index]);
+    });
+    $('.video_close').click(function () {
+        $.fn.fullpage.setAllowScrolling(true);//启用页面滚动
+        $('.video_play_mask').hide();
+        window.location.reload();
+    });
     //上一页
     $('#last_page').click(function () {
         page_num--;
@@ -125,7 +140,7 @@ $(function () {
         $(".sx_nav").css("z-index",999);//设置导航栏层级
         $(".videoOutBox").removeClass("videoContent");//外层容器移除弹出样式
         $(".popup_btn").css("display","block");//显示弹出按钮
-        $("video").each(function () {//停止播放视频
+        $(".videoBox video").each(function () {//停止播放视频
             var videoId=videojs($(this).attr("id"));
             videoId.pause();
         })
