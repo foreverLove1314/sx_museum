@@ -1,4 +1,8 @@
 $(function () {
+    // 3D模型
+    new Vue({
+        el: '#app'
+    })
 	// 达标率
     var standardRate = echarts.init(document.getElementById('standardRate'));
     var gaugeOption = {
