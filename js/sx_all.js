@@ -46,7 +46,7 @@ $(function () {
         }
     });
     //视频
-    var video_src =['../video/1_0.mp4','../video/video2.mp4','../video/video3.mp4','../video/video4.mp4'];
+    var video_src =['../video/video1.mp4','../video/video2.mp4','../video/video1.mp4','../video/video2.mp4'];
     var video_play =$('.basic_info_bottom ul li img');
     video_play.click(function () {
         $.fn.fullpage.setAllowScrolling(false);//禁止页面滚动
@@ -94,7 +94,6 @@ $(function () {
     var runNum=0;//控制容器不停移动的计数
     var runTime="";//申明一个定时器
     var runUlWidth=$(".important_relics_show ul").width();//容器ul的width
-    var runLiWidth=$(".important_relics_show ul li").width();//容器li的width
     $(".important_relics_img").width(runUlWidth*2);//设置放置图片外层容器宽度
     $("#show_two").html($("#show_one").html())//复制第一个容器的所有图片,到第二个容器中
     function importantRun(){

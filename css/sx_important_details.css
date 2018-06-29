@@ -362,3 +362,74 @@ body{
     margin: 0 auto;
     line-height: 80px;
 }
+.similar_relic{
+    width: 100%;
+    height: 336px;
+    background: url("../img/detail_similar_bg.png");
+    margin: 10px 0 20px 0;
+}
+.similar_relic_top{
+    width: 100%;
+    height: 25px;
+    position: relative;
+    top: 13px;
+}
+.similar_relic_label{
+    width: 45px;
+    height: 100%;
+    background: #b69765;
+    float: left;
+}
+.similar_relic_title{
+    display: block;
+    float: left;
+    padding-left: 5px;
+    color: #b69765;
+    font-size: 18px;
+}
+.similar_relic_bottom{
+    width: 100%;
+    height: 311px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.relic_view_box{
+    width: 90%;
+    height: 71%;
+    overflow: hidden;
+}
+.relic_move{
+    height: 100%;
+    padding: 5px 0;
+    position: relative;
+}
+.relic_view_box .view_front{
+    height: 100%;
+    float: left;
+}
+.relic_view_box .view_behind{
+    height: 100%;
+    float: left;
+}
+.similar_relic_img{
+    width: 192px;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px 1px #ccc;
+    float: left;
+    padding-top: 1%;
+    margin-right: 25px;
+}
+.similar_relic_img img{
+    display: block;
+    margin: auto;
+}
+.similar_relic_name{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #b69765;
+    text-align: center;
+    margin-top: 10px;
+}

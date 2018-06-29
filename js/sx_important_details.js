@@ -110,4 +110,27 @@ $(function () {
         }]
     };
     parameter.setOption(radarOption, true);
-})
+    //相似文物跑马灯效果
+    var li_num = $('.similar_relic_img').length;        //图片个数，方便计算ul宽度
+    var ul_width = li_num*(192+25)+'px';
+    $('.view_front').width(ul_width);                   //算出ul宽度
+    $('.relic_move').width(li_num*(192+25)*2+'px');     //算出跑马灯移动栏宽度
+    $('.view_behind').html($('.view_front').html());    //生成第二个ul，使移动过程中能平滑切换
+    var relic_move_num = 0;
+    function relic_move() {
+        // console.log(Math.abs(parseInt($('.relic_move').css('left'))));
+        if(Math.abs(parseInt($('.relic_move').css('left')))>=parseInt(ul_width)){
+            relic_move_num = 0;
+            $('.relic_move').css('left',0);
+        }else{
+            relic_move_num++;
+            $('.relic_move').css('left',-1*relic_move_num)
+        }
+    }
+    var relic_move_time = setInterval(relic_move,20);
+    $('.relic_view_box').hover(function () {
+        clearInterval(relic_move_time);
+    },function () {
+        relic_move_time = setInterval(relic_move,20);
+    })
+});
