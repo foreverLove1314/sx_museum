@@ -1,9 +1,39 @@
 $(function () {
-    // 3D模型
-    new Vue({
-        el: '#app'
-    })
 	// 达标率
+    // 3D模型
+    // new Vue({
+    //     el: '#model_box',
+    //     data: {
+    //         rotation: {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0
+    //         },
+    //         position:{
+    //             x: 0,
+    //             y: 0,
+    //             z: 0
+    //         },
+    //         scale:{
+    //             x: 0.9,
+    //             y: 0.9,
+    //             z: 0.9
+    //         },
+    //         run:""
+    //     },
+    //     methods: {
+    //         onLoad () {
+    //             this.rotate();
+    //         },
+    //         rotate () {
+    //             this.rotation.y += 0.01;
+    //             this.run=requestAnimationFrame( this.rotate );
+    //         },
+    //         stopRotation(){
+    //             cancelAnimationFrame(this.run)
+    //         }
+    //     }
+    // })
     var standardRate = echarts.init(document.getElementById('standardRate'));
     var gaugeOption = {
         tooltip: {

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../js/sx_important_details.js"></script>
 </head>
 <body>
+
     <div class="sx_nav">
         <a href="./sx_all.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
         <ul class="sx_nav_ul">
@@ -31,9 +32,14 @@
             <div class="img_box">
                 <img src="../img/three_img1.jpg" alt="无法显示">
             </div>
-            <div id="app" class="model_box">
-                <model-obj src="../model/hats.obj" width="600" height="600"></model-obj>
-            </div>
+
+            <!--<div id="model_box" class="model_box" @mouseover="stopRotation" @mouseout="rotate">-->
+                <!--<model-obj :rotation="rotation"-->
+                           <!--@on-load="onLoad"-->
+                           <!--:scale="scale"-->
+                           <!--:position="position"-->
+                           <!--src="../model/75360.obj" mtl="../model/75360.mtl"  width="900" height="600" ></model-obj>-->
+            <!--</div>-->
         </div>
         <div class="relic_introduce">
             <span class="relic_title">【清同治年制款黄地粉彩梅鹊纹瓷碗】</span>
@@ -194,7 +200,9 @@
             <div class="relic_font_box">
                 <p class="relic_relevant_font">文物相关信息</p>
             </div>
+            <div id="heatMapDiv">
 
+            </div>
         </div>
         <div class="similar_relic">
             <div class="similar_relic_top">
@@ -272,5 +280,8 @@
             </div>
         </div>
     </div>
+    <iframe src="3D_model.html" frameborder="0" width="900px" height="600px" class="model_iframe">
+
+    </iframe>
 </body>
 </html>

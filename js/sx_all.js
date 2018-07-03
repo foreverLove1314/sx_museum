@@ -77,16 +77,31 @@ $(function () {
     });
     /*环境信息*/
     // 环境信息的环境场轮播
+    var liItem=0;//表示当前显示环境场的下标，默认第一个
     var envSiteLen=$(".env_site_play ul li").length;
     $(".env_left_btn").click(function () {//环境场向左切换
-        $(".env_site_play ul li").eq(0).appendTo($(".env_site_play ul"));
+        liItem++;
+        if(liItem==4){
+            liItem=0;
+        }
+        $(".env_site_play ul").css("left",-liItem*100+"%");
+        $(".env_site_nav a").css("color","#b6b6b6");//还原下方文字的字体颜色
+        $(".env_site_nav a").eq(liItem).css("color","#ffffff");//添加对应焦点文字的样式
     });
     $(".env_right_btn").click(function () {//环境场向右切换
-        $(".env_site_play ul li").eq(envSiteLen-1).prependTo($(".env_site_play ul"));
+        liItem--;
+        if(liItem==-1){
+            liItem=3;
+        }
+        $(".env_site_play ul").css("left",-liItem*100+"%");
+        $(".env_site_nav a").css("color","#b6b6b6");//还原下方文字的字体颜色
+        $(".env_site_nav a").eq(liItem).css("color","#ffffff");//添加对应焦点文字的样式
     });
     $(".env_site_nav a").click(function () {
-        var $moveLi=$(".env_site_play ul li[li-item="+$(this).index()+"]")//获取被点中的元素相对应的场
-        $moveLi.prependTo($(".env_site_play ul"));
+        liItem=$(this).index();//获取被点中的元素相对应的场
+        $(".env_site_play ul").css("left",-liItem*100+"%");
+        $(".env_site_nav a").css("color","#b6b6b6");
+        $(this).css("color","#ffffff");
     });
     //文物走马灯播放效果
     var show_li=$("#show_one li").length;
@@ -140,4 +155,5 @@ $(function () {
         $('.video_play_mask').hide();
         $('.video_play_container .video').empty();
     });
+    // 热力场
 });
