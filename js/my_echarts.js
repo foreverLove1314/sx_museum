@@ -3,10 +3,11 @@ $(function () {
     var option = {
         title:{
             text:'单位：人',
-            left:'center',
+            left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:16
+                fontSize:14,
+                fontWeight:400
             }
         },
         tooltip: {
@@ -61,7 +62,7 @@ $(function () {
             {
                 type: 'bar',
                 data: [23685, 20236, 18253,12231,5681],
-                barWidth: 25,
+                barWidth: 22,
                 textStyle:{
                     fontSize:18
                 },
@@ -88,10 +89,11 @@ $(function () {
     var option = {
         title:{
             text:'单位：人',
-            left:'center',
+            left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:16
+                fontSize:14,
+                fontWeight:400
             }
         },
         tooltip: {
@@ -146,9 +148,9 @@ $(function () {
             {
                 type: 'bar',
                 data: [8563, 12365, 23451,3265,15632],
-                barWidth: 25,
+                barWidth: 22,
                 textStyle:{
-                    fontSize:18
+                    fontSize:15
                 },
                 itemStyle: {
                     normal: {
@@ -173,10 +175,11 @@ $(function () {
     var option = {
         title:{
             text:'单位：人',
-            left:'center',
+            left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:16
+                fontSize:14,
+                fontWeight:400
             }
         },
         tooltip: {
@@ -231,7 +234,7 @@ $(function () {
             {
                 type: 'bar',
                 data: [18563, 2365, 13451,7265,25632],
-                barWidth: 25,
+                barWidth: 22,
                 textStyle:{
                     fontSize:18
                 },

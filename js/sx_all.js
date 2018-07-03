@@ -3,11 +3,11 @@ $(function () {
         paddingTop: '100px',//顶部100px内间距
         verticalCentered:false,//内容不居中
         afterLoad:function(anchorLink, index){
-
                 if(index==1){
-                    $('.counter').countUp();
-                } else if(index==3){
-                    $('.counter_roll').countUp();//数字滚动
+
+                }
+                if(index==3){
+
                 }
                 //滚动某一屏，导航栏对应添加样式
                 $(".sx_nav_ul li a").removeClass("nav_active").eq(index-1).addClass("nav_active");
@@ -21,10 +21,9 @@ $(function () {
         var nav_item=$(this).parents("li").index();//获取被点击元素父元素的下标
         //滚动到网站的被选中对应的屏
         $.fn.fullpage.moveTo((nav_item+1), 0);//
-    })
-    //高度自适应窗口高度
-    $('#basic_info').height($(window).height()-80);
-    $('.counter').countUp();//数字滚动
+    });
+    //数字滚动
+    $('.counter').counterUp();
     //特展人流量
     var my_echarts = $('.basic_info_middle .right .content');
     my_echarts.width($('.basic_info_middle .right').width()*1);
@@ -49,16 +48,17 @@ $(function () {
     var video_src =['../video/video1.mp4','../video/video2.mp4','../video/video1.mp4','../video/video2.mp4'];
     var video_play =$('.basic_info_bottom ul li img');
     video_play.click(function () {
-        $.fn.fullpage.setAllowScrolling(false);//禁止页面滚动
-        var video_index = $(this).parents('li').index();
+        $.fn.fullpage.setAllowScrolling(false);             //禁止页面滚动
+        var index = $(this).parents('li').index();
         $('.video_play_mask').fadeIn(1000);
-        $('.video_play_container .video video .plyr .plyr__play-large').show();
-        $('.video_play_container .video video').attr('src',video_src[video_index]);
+        //在容器中添加<video>及播放插件相关方法
+        $('.video_play_container .video').append('<video></video>'+ '<script>plyr.setup();</script>');
+        $('.video_play_container .video video').attr('src',video_src[index]);  //播放对应的视频
     });
     $('.video_close').click(function () {
-        $.fn.fullpage.setAllowScrolling(true);//启用页面滚动
+        $.fn.fullpage.setAllowScrolling(true);      //启用页面滚动
         $('.video_play_mask').hide();
-        window.location.reload();
+        $('.video_play_container .video').empty();  //移除div类名为video所有子节点,相当于重置video
     });
     //上一页
     $('#last_page').click(function () {
@@ -123,25 +123,21 @@ $(function () {
         }
     });
     // 创意文物信息
-    // 视频播放
-    // var videoObj = videojs("videoId");
-    $(".popup_btn").click(function () {//点击播放按钮时，视频弹出
-        $.fn.fullpage.setAllowScrolling(false);//禁止页面滚动
-        $(".sx_nav").css("z-index",0);//设置导航栏层级
-        // $(this).parents(".videoOutBox").appendTo(".video_play_box");//移动被点击的视频
-        $(".model_div").css("display","block");//显示背景弹出层
-        $(this).parents(".videoOutBox").addClass("videoContent");//外层容器添加弹出样式
-        $(this).css("display","none");//隐藏弹出按钮
+    // 视频播放，同文物基本信息的视频播放
+    var creative_video_src =['../video/video1.mp4','../video/video2.mp4'];
+    var creative_video_play =$('.creative_video_play');
+    creative_video_play.click(function () {
+        $.fn.fullpage.setAllowScrolling(false);
+        var index = $(this).parents('.creative_video').index();
+        $('.video_play_mask').fadeIn(1000);
+        //在容器中添加<video>及播放插件相关方法
+        $('.video_play_container .video').append('<video></video>'+ '<script>plyr.setup();</script>');
+        //父级元素‘.creative_video’的同胞有3个，因此最后的index减1
+        $('.video_play_container .video video').attr('src',creative_video_src[index-1]);
     });
-    $(".model_div").click(function () {
-        $.fn.fullpage.setAllowScrolling(true);//启用页面滚动
-        $(this).css("display","none");//点击弹出层，关闭弹出状态
-        $(".sx_nav").css("z-index",999);//设置导航栏层级
-        $(".videoOutBox").removeClass("videoContent");//外层容器移除弹出样式
-        $(".popup_btn").css("display","block");//显示弹出按钮
-        $(".videoBox video").each(function () {//停止播放视频
-            var videoId=videojs($(this).attr("id"));
-            videoId.pause();
-        })
+    $('.video_close').click(function () {
+        $.fn.fullpage.setAllowScrolling(true);
+        $('.video_play_mask').hide();
+        $('.video_play_container .video').empty();
     });
 });

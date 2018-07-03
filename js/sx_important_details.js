@@ -124,10 +124,10 @@ $(function () {
     function relic_move() {
         // console.log(Math.abs(parseInt($('.relic_move').css('left'))));
         if(Math.abs(parseInt($('.relic_move').css('left')))>=parseInt(ul_width)){
-            relic_move_num = 0;
+            relic_move_num = 0;                         //当移动完一个移动栏宽度后，左偏移量归零
             $('.relic_move').css('left',0);
         }else{
-            relic_move_num++;
+            relic_move_num++;                           //未移动完一个移动栏宽度，则持续移动
             $('.relic_move').css('left',-1*relic_move_num)
         }
     }

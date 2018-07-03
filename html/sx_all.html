@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="sx_nav">
-        <a href="../index.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
+        <a href="./sx_all.html" class="sx_nav_logo"><img src="../img/logo.png" alt="无法显示"></a>
         <ul class="sx_nav_ul">
             <li><a class="nav_active">文物基本信息</a></li>
             <li><a>环境信息</a></li>
@@ -33,11 +33,10 @@
     </div>
     <div class="video_play_mask">
         <div class="video_play_container">
-            <div class="video">
-                <video controls="controls" src=""></video>
-                <script>plyr.setup();</script>
-            </div>
-            <button class="video_close"></button>
+            <div class="video"></div>
+            <button class="video_close">
+                <img src="../img/video_close.png">
+            </button>
         </div>
     </div>
     <div id="fullPageDiv">
@@ -320,17 +319,17 @@
                 <div class="important_relics_info_top">
                     <div>
                         文物参观总人数：
-                        <span class="counter_roll">25800000</span>
+                        <span class="counter1">25800000</span>
                         &nbsp;人
                     </div>
                     <div class="visit_num">
                         今年参观人数：
-                        <span class="counter_roll">25720</span>
+                        <span class="counter1">33251</span>
                         &nbsp;人
                         &nbsp;<img src="../img/env_red_top.png">
                     </div>
                     <div>同比去年参观人数：
-                        <span class="counter_roll">12788</span>
+                        <span class="counter1">12788</span>
                         &nbsp;人
                         &nbsp;<img src="../img/env_down.png">
                     </div>
@@ -341,13 +340,41 @@
                         <div class="important_show_box">
                             <div class="important_relics_img">
                                 <ul id="show_one">
-                                    <li><img src="../img/important_pic1.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic2.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic3.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic4.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic5.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic6.jpg" alt="无法显示"></li>
-                                    <li><img src="../img/important_pic1.jpg" alt="无法显示"></li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic1.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic2.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic3.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic4.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic5.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic6.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./sx_important_details.html">
+                                            <img src="../img/important_pic1.jpg" alt="无法显示">
+                                        </a>
+                                    </li>
                                     <!--<li><img src="../img/important_pic2.jpg" alt="无法显示"></li>-->
                                     <!--<li><img src="../img/important_pic3.jpg" alt="无法显示"></li>-->
                                 </ul>
@@ -494,7 +521,7 @@
                 </div>
             </div>
         </div>
-        <div class="section" id="page4">
+        <div class="section">
             <div class="creative_relics">
                 <div class="env_info_box">
                     <span>室外气象信息：<img src="../img/env_temp.png" alt="">&nbsp;&nbsp;27℃</span>
@@ -506,33 +533,11 @@
                     <span class="env_right">馆内环境信息：远古巴渝展厅&nbsp;&nbsp;35℃&nbsp;&nbsp;<img src="../img/env_red_top.png" alt="无法显示"></span>
                     <span class="env_right">历代瓷器展厅&nbsp;&nbsp;32℃&nbsp;&nbsp;<img src="../img/env_down.png" alt="无法显示"></span>
                 </div>
-                <div class="videoOutBox" style="float: left;">
-                    <div class="videoBox" >
-                        <video id="my-video" class="video-js" controls preload="auto"
-                               data-setup="{}" >
-                            <source src="../video/mov_bbb.mp4" type='video/mp4'>
-                            <source src="" type='video/webm'>
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                        </video>
-                        <div class="popup_btn"></div>
-                    </div>
+                <div class="creative_video" style="background: url('../img/creative_video1.png');background-size:100% 100%;float: left">
+                    <div class="creative_video_play"></div>
                 </div>
-                <div class="videoOutBox" style="float: right;">
-                    <div class="videoBox">
-                        <video id="" class="video-js" controls preload="auto"
-                               data-setup="{}" >
-                            <source src="../video/mov_bbb.mp4" type='video/mp4'>
-                            <source src="" type='video/webm'>
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                        </video>
-                        <div class="popup_btn"></div>
-                    </div>
+                <div class="creative_video" style="background: url('../img/creative_video2.png');background-size:100% 100%;float: right">
+                    <div class="creative_video_play"></div>
                 </div>
             </div>
             <div class="model_div"></div>
@@ -546,5 +551,4 @@
     <!--echarts-->
     <script type="text/javascript" src="../js/my_echarts.js"></script>
 </body>
-
 </html>

@@ -94,23 +94,23 @@
                  <ul class="summary">
                      <li class="title">
                          <span class="triangle"></span>
-                         <a href="javascript:void (0);" class="word">文物基本信息</a>
+                         <a href="html/sx_all.html" class="word">文物基本信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a href="javascript:void (0);" class="word">环境信息</a>
+                         <a href="html/sx_all.html" class="word">环境信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a href="javascript:void (0);" class="word">重点文物信息</a>
+                         <a href="html/sx_all.html" class="word">重点文物信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a href="javascript:void (0);" class="word">创意文物信息</a>
+                         <a href="html/sx_all.html" class="word">创意文物信息</a>
                      </li>
                      <li class="title">
                          <span class="triangle"></span>
-                         <a href="javascript:void (0);" class="word">博物馆舆情信息</a>
+                         <a href="html/sx_all.html" class="word">博物馆舆情信息</a>
                      </li>
                  </ul>
             </div>
@@ -119,7 +119,6 @@
     </div>
 </body>
 <script type="text/javascript">
-
     $(function (){
         $('#first_page').height($(window).height());//高度自适应浏览器窗口高度
         var li = $('#first_page .left_info .title');
@@ -127,6 +126,13 @@
             li.eq(i).delay(i*600).animate({top:i*120+200,opacity:1},2000);
         }
         $('#first_page .logo').delay(3600).animate({bottom:80,opacity:1},2500);
+        //跳转
+        setTimeout(function () {
+            location.href='html/sx_all.html'
+        },8000)
     })
+
+
+
 </script>
 </html>
