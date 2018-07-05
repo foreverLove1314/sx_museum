@@ -98,12 +98,12 @@ body{
     margin: 100px 0 115px 0;
     position: relative;
 }
-.model_iframe{
+.model_box{
     width: 900px;
     height: 600px;
     position: absolute;
-    right: 200px;
-    top: 200px;
+    right: 0;
+    top: 0;
     background-color: #f3f3f3;
 }
 .scrollTest{
@@ -248,6 +248,8 @@ body{
     float: left;
     position: relative;
     padding-right: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .time_axis_box{
     position: relative;
@@ -347,25 +349,59 @@ body{
 .history_up:hover  .two_circle{
     display: block;
 }
+.history_up_out{
+    /*padding-left: 280px;*/
+}
 .history_up_box{
     float: left;
     width: 100%;
 }
+.history_up{
+    float: left;
+    padding-top: 10px;
+    margin-right: 200px;
+}
+.history_up:first-child{
+    margin-left: 280px;
+}
+.history_up:last-child{
+    margin-right: 0;
+}
+.history_down_out{
+    position: relative;
+    /*padding-left: 90px;*/
+    border-top: 1px solid #dcdcdc;
+}
 .history_down_box{
     width: 100%;
     float: left;
-    border-top: 1px solid #dcdcdc;
     position: relative;
 }
 .history_down{
     float: left;
+    padding-bottom: 10px;
+    margin-right: 240px;
 }
-.history_up{
-     float: left;
+.history_down:first-child{
+    margin-left: 90px;
 }
+.history_down:last-child{
+    margin-right: 0;
+}
+
 .relic_history{
     margin-top: 140px;
     margin-bottom: 100px;
+}
+.history_down_out::before,.history_down_out::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.history_up_out::before,.history_up_out::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 /*文物相关信息*/
 .relic_relevant{
