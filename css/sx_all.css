@@ -100,7 +100,7 @@ table {
 }
 .basic_info_middle{
     width: 82%;
-    height: 57%;
+    height: 59%;
     margin: 20px auto;
     background: url("../img/basic_mid_bg.png");
     background-size: 100% 100%;
@@ -361,7 +361,7 @@ table {
 }
 .env_site{
     width: 100%;
-    height: 78%;
+    height: 85%;
     background-color: #f3f3f3;
     position: relative;
 }
@@ -438,7 +438,7 @@ table {
 .important_relics_info_top{
     width: 100%;
     height: 8.4%;
-    margin: 0 auto;
+    margin-bottom: 20px;
     background: url(../img/frame.png);
     background-size: 100% 100%;
 }
@@ -466,6 +466,7 @@ table {
 }
 .important_relics_box{
     padding-right: 20px;
+    margin-bottom: 20px;
     position: relative;
 }
 .important_relics_show{
@@ -518,10 +519,10 @@ table {
 
 .important_relics_info .form{
     width: 100%;
-    height: 57%;
-    margin-top: 20px;
+    height: 59%;
     border: 2px solid #ba9a67;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
+    overflow: hidden;
 }
 .important_relics_info .form .scroll{
     overflow-y: scroll;

@@ -39,9 +39,20 @@ $(function () {
         my_echarts.eq(page_num-1).show();    //显示当前echarts
         $('#last_page').show();             //显示上一页按钮
         if(page_num>=3){
-            page_num=3;
-            $('#page_num').html(page_num);  //如果页数大于3，则一直为3，并重置当前显示页码
             $(this).hide();                 //下一页按钮隐藏
+        }
+    });
+    //上一页
+    $('#last_page').click(function () {
+        page_num--;
+        $('#page_num').html(page_num);
+        for(var i=0;i<3;i++){
+            my_echarts.eq(i).hide();
+        }
+        my_echarts.eq(page_num-1).show();
+        $('#next_page').show();
+        if(page_num<=1){
+            $(this).hide();
         }
     });
     //视频
@@ -59,21 +70,6 @@ $(function () {
         $.fn.fullpage.setAllowScrolling(true);      //启用页面滚动
         $('.video_play_mask').hide();
         $('.video_play_container .video').empty();  //移除div类名为video所有子节点,相当于重置video
-    });
-    //上一页
-    $('#last_page').click(function () {
-        page_num--;
-        $('#page_num').html(page_num);
-        for(var i=0;i<3;i++){
-            my_echarts.eq(i).hide();
-        }
-        my_echarts.eq(page_num-1).show();
-        $('#next_page').show();
-        if(page_num<=1){
-            page_num=1;
-            $('#page_num').html(page_num);
-            $(this).hide();
-        }
     });
     /*环境信息*/
     // 环境信息的环境场轮播
