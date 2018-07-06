@@ -1,6 +1,9 @@
 $(function () {
 	// 达标率
     // 3D模型
+    var model_width1 = $('.img_three_d').width()*0.6+"px";
+    console.log(model_width1)
+    var model_height1 = $('.img_three_d').height()*0.9+"px";
     new Vue({
         el: '#model_box',
         data: {
@@ -19,21 +22,23 @@ $(function () {
                 y: 0.9,
                 z: 0.9
             },
-            run:""
+            run:"",
+            model_width:model_width1,
+            model_height:model_height1
         },
         methods: {
-            onLoad () {
+            onLoad :function() {
                 this.rotate();
             },
-            rotate () {
+            rotate :function() {
                 this.rotation.y += 0.01;
                 this.run=requestAnimationFrame( this.rotate );
             },
-            stopRotation(){
+            stopRotation:function(){
                 cancelAnimationFrame(this.run)
             }
         }
-    })
+    });
     var standardRate = echarts.init(document.getElementById('standardRate'));
     var gaugeOption = {
         tooltip: {

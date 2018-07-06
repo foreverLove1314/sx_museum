@@ -23,7 +23,9 @@ $(function () {
         $.fn.fullpage.moveTo((nav_item+1), 0);//
     });
     //数字滚动
-    $('.counter').counterUp();
+    setTimeout(function () {
+        $('.counter').counterUp();
+    },2000)
     //特展人流量
     var my_echarts = $('.basic_info_middle .right .content');
     //echarts宽高自适应
@@ -145,4 +147,7 @@ $(function () {
         videoPlay($(this),creative_video_src);
     });
     // 热力场
+
+    /*屏幕分辨率自适应*/
+    console.log(screen.width,screen.height)
 });

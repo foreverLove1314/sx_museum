@@ -99,12 +99,12 @@ body{
     position: relative;
 }
 .model_box{
-    width: 900px;
-    height: 600px;
+    width: 63%;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    background-color: #f3f3f3;
+    border: 1px solid #dcdcdc;
 }
 .scrollTest{
     width: 40%;
