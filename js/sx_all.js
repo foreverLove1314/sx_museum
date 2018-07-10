@@ -105,14 +105,17 @@ $(function () {
         $(".env_site_nav a").css("color","#b6b6b6");
         $(this).css("color","#ffffff");
     });
+    /*重点文物信息*/
     //文物走马灯播放效果
     var show_li=$("#show_one li").length;
-    $(".important_relics_show ul").css("width",show_li*(193+20)+"px");//动态设置ul的宽度
+    var show_li_width = $("#show_one li").width();
+    var show_li_margin = parseInt($("#show_one li").css("margin-right"));
+    $(".important_relics_img ul").css("width",show_li*(show_li_width+show_li_margin)+"px");//动态设置ul的宽度
     var runNum=0;//控制容器不停移动的计数
     var runTime="";//申明一个定时器
-    var runUlWidth=$(".important_relics_show ul").width();//容器ul的width
+    var runUlWidth=$(".important_relics ul").width();//容器ul的width
     $(".important_relics_img").width(runUlWidth*2);//设置放置图片外层容器宽度
-    $("#show_two").html($("#show_one").html())//复制第一个容器的所有图片,到第二个容器中
+    $("#show_two").html($("#show_one").html());//复制第一个容器的所有图片,到第二个容器中
     function importantRun(){
         //当元素偏移量滚动完一个容器宽度时，left值归零，达到无缝跑马灯效果
         if($("#show_one").width()-Math.abs(parseInt($(".important_relics_img").css("left")))<=0){
@@ -123,13 +126,12 @@ $(function () {
             $(".important_relics_img").css("left",-1*runNum);
         }
     };
-    runTime=setInterval(importantRun,20);
-    $(".important_show_box").hover(function () {//鼠标移入停止跑马灯动画
+    runTime=setInterval(importantRun,30);
+    $(".important_relics_show").hover(function () {//鼠标移入停止跑马灯动画
         clearInterval(runTime);
     },function () {//鼠标移除，启动跑马灯动画
         runTime=setInterval(importantRun,20);
     });
-    /*重点文物信息*/
     //修复进度完成显示
     var total_width = $('.important_relics_info .schedule_bg').width();
     $('.important_relics_info .schedule').each(function () {
@@ -149,5 +151,5 @@ $(function () {
     // 热力场
 
     /*屏幕分辨率自适应*/
-    console.log(screen.width,screen.height)
+
 });

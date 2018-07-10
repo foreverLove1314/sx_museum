@@ -1,12 +1,12 @@
 $(function () {
     var myChart1 = echarts.init(document.getElementById('visitor_flowrate1'));
-    var option = {
+    var option1 = {
         title:{
             text:'单位：人',
             left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:14,
+                fontSize:13,
                 fontWeight:400
             }
         },
@@ -83,16 +83,16 @@ $(function () {
         ]
 
     };
-    myChart1.setOption(option);
+    myChart1.setOption(option1);
 
     var myChart2 = echarts.init(document.getElementById('visitor_flowrate2'));
-    var option = {
+    var option2 = {
         title:{
             text:'单位：人',
             left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:14,
+                fontSize:13,
                 fontWeight:400
             }
         },
@@ -169,16 +169,16 @@ $(function () {
         ]
 
     };
-    myChart2.setOption(option);
+    myChart2.setOption(option2);
     
     var myChart3 = echarts.init(document.getElementById('visitor_flowrate3'));
-    var option = {
+    var option3 = {
         title:{
             text:'单位：人',
             left:'right',
             textStyle:{
                 color:'#fff',
-                fontSize:14,
+                fontSize:13,
                 fontWeight:400
             }
         },
@@ -253,7 +253,40 @@ $(function () {
                 }
             }
         ]
-
     };
-    myChart3.setOption(option);
+    myChart3.setOption(option3);
+    /*屏幕分辨率自适应*/
+    if (screen.width>=1366&&screen.width<=1440){
+        option1.title.textStyle.fontSize = 10;           //副标题字体
+        option1.yAxis.axisLabel.textStyle.fontSize = 13; //Y轴字体
+        option1.series[0].barWidth = 18;                 //条形宽度
+        option1.series[0].itemStyle.normal.label.textStyle.fontSize = 13; //数字大小
+        myChart1.setOption(option1);
+        option2.title.textStyle.fontSize = 10;           //副标题字体
+        option2.yAxis.axisLabel.textStyle.fontSize = 13; //Y轴字体
+        option2.series[0].barWidth = 18;                 //条形宽度
+        option2.series[0].itemStyle.normal.label.textStyle.fontSize = 13; //数字大小
+        myChart2.setOption(option2);
+        option3.title.textStyle.fontSize = 10;           //副标题字体
+        option3.yAxis.axisLabel.textStyle.fontSize = 13; //Y轴字体
+        option3.series[0].barWidth = 18;                 //条形宽度
+        option3.series[0].itemStyle.normal.label.textStyle.fontSize = 13; //数字大小
+        myChart3.setOption(option3);
+    }else if(screen.width>=1680){
+        option1.title.textStyle.fontSize = 13;           //副标题字体
+        option1.yAxis.axisLabel.textStyle.fontSize = 16; //Y轴字体
+        option1.series[0].barWidth = 22;                 //条形宽度
+        option1.series[0].itemStyle.normal.label.textStyle.fontSize = 15; //数字大小
+        myChart1.setOption(option1);
+        option2.title.textStyle.fontSize = 13;           //副标题字体
+        option2.yAxis.axisLabel.textStyle.fontSize = 16; //Y轴字体
+        option2.series[0].barWidth = 22;                 //条形宽度
+        option2.series[0].itemStyle.normal.label.textStyle.fontSize = 15; //数字大小
+        myChart2.setOption(option2);
+        option3.title.textStyle.fontSize = 13;           //副标题字体
+        option3.yAxis.axisLabel.textStyle.fontSize = 16; //Y轴字体
+        option3.series[0].barWidth = 22;                 //条形宽度
+        option3.series[0].itemStyle.normal.label.textStyle.fontSize = 15; //数字大小
+        myChart3.setOption(option3);
+    }
 });
