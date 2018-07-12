@@ -100,7 +100,7 @@ table {
 }
 .basic_info_middle{
     width: 82%;
-    height: 57%;
+    height: 59%;
     margin: 20px auto;
     background: url("../img/basic_mid_bg.png");
     background-size: 100% 100%;
@@ -324,8 +324,10 @@ table {
 }
 .env_info_box{
     width: 100%;
-    height: 80px;
-    line-height: 80px;
+    height: 8.4%;
+    display: flex;
+    align-items: center;
+    /*line-height: 80px;*/
     background: url("../img/box_pic.png") no-repeat;
     margin: 0 auto;
     padding-left: 33px;
@@ -334,7 +336,7 @@ table {
 }
 .env_info_box span{
     display: inline-block;
-    height: 100%;
+    /*height: 100%;*/
     color: #ba9a67;
     margin: 0 15px;
     float: left;
@@ -347,7 +349,7 @@ table {
 }
 .env_info_box  .verticalLine{
     width: 1px;
-    height: 51px;
+    height: 80%;
     display: block;
     float: left;
     background-color: #ba9a67;
@@ -361,7 +363,7 @@ table {
 }
 .env_site{
     width: 100%;
-    height: 78%;
+    height: 85%;
     background-color: #f3f3f3;
     position: relative;
 }
@@ -438,7 +440,7 @@ table {
 .important_relics_info_top{
     width: 100%;
     height: 8.4%;
-    margin: 0 auto;
+    margin-bottom: 20px;
     background: url(../img/frame.png);
     background-size: 100% 100%;
 }
@@ -466,6 +468,7 @@ table {
 }
 .important_relics_box{
     padding-right: 20px;
+    margin-bottom: 20px;
     position: relative;
 }
 .important_relics_show{
@@ -518,10 +521,10 @@ table {
 
 .important_relics_info .form{
     width: 100%;
-    height: 57%;
-    margin-top: 20px;
+    height: 59%;
     border: 2px solid #ba9a67;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
+    overflow: hidden;
 }
 .important_relics_info .form .scroll{
     overflow-y: scroll;
@@ -610,7 +613,7 @@ table {
     transform: scale(1.08);
     transition: 0.5s;
 }
-@media only screen and (max-width:1600px) {
+@media only screen  and (max-width:1600px) {
     .env_info_box{
         padding-left: 8px;
     }

@@ -256,5 +256,4 @@ $(function () {
 
     };
     myChart3.setOption(option);
-
 });

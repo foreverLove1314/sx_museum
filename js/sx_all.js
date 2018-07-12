@@ -23,9 +23,12 @@ $(function () {
         $.fn.fullpage.moveTo((nav_item+1), 0);//
     });
     //数字滚动
-    $('.counter').counterUp();
+    setTimeout(function () {
+        $('.counter').counterUp();
+    },2000)
     //特展人流量
     var my_echarts = $('.basic_info_middle .right .content');
+    //echarts宽高自适应
     my_echarts.width($('.basic_info_middle .right').width()*1);
     my_echarts.height($('.basic_info_middle .right').height()*0.61);
     var page_num= 1;
@@ -39,26 +42,8 @@ $(function () {
         my_echarts.eq(page_num-1).show();    //显示当前echarts
         $('#last_page').show();             //显示上一页按钮
         if(page_num>=3){
-            page_num=3;
-            $('#page_num').html(page_num);  //如果页数大于3，则一直为3，并重置当前显示页码
             $(this).hide();                 //下一页按钮隐藏
         }
-    });
-    //视频
-    var video_src =['../video/video1.mp4','../video/video2.mp4','../video/video1.mp4','../video/video2.mp4'];
-    var video_play =$('.basic_info_bottom ul li img');
-    video_play.click(function () {
-        $.fn.fullpage.setAllowScrolling(false);             //禁止页面滚动
-        var index = $(this).parents('li').index();
-        $('.video_play_mask').fadeIn(1000);
-        //在容器中添加<video>及播放插件相关方法
-        $('.video_play_container .video').append('<video></video>'+ '<script>plyr.setup();</script>');
-        $('.video_play_container .video video').attr('src',video_src[index]);  //播放对应的视频
-    });
-    $('.video_close').click(function () {
-        $.fn.fullpage.setAllowScrolling(true);      //启用页面滚动
-        $('.video_play_mask').hide();
-        $('.video_play_container .video').empty();  //移除div类名为video所有子节点,相当于重置video
     });
     //上一页
     $('#last_page').click(function () {
@@ -70,11 +55,28 @@ $(function () {
         my_echarts.eq(page_num-1).show();
         $('#next_page').show();
         if(page_num<=1){
-            page_num=1;
-            $('#page_num').html(page_num);
             $(this).hide();
         }
     });
+    //视频
+    var video_src =['../video/video1.mp4','../video/video2.mp4','../video/video1.mp4','../video/video2.mp4'];
+    var video_play =$('.basic_info_bottom ul li img');
+    video_play.click(function(){
+        videoPlay($(this),video_src);
+    });
+    function videoPlay(e,src) {
+        $.fn.fullpage.setAllowScrolling(false);             //禁止页面滚动
+        $('.video_play_mask').fadeIn(1000);
+        var index = e.parent().index();
+        //在容器中添加<video>及播放插件相关方法
+        $('.video_play_container .video').append('<video></video>'+ '<script>plyr.setup();</script>');
+        $('.video_play_container .video video').attr('src',src[index]);  //播放对应的视频
+        $('.video_close').click(function () {
+            $.fn.fullpage.setAllowScrolling(true);      //启用页面滚动
+            $('.video_play_mask').hide();
+            $('.video_play_container .video').empty();  //移除div类名为video所有子节点,相当于重置video
+        });
+    }
     /*环境信息*/
     // 环境信息的环境场轮播
     var liItem=0;//表示当前显示环境场的下标，默认第一个
@@ -142,18 +144,10 @@ $(function () {
     var creative_video_src =['../video/video1.mp4','../video/video2.mp4'];
     var creative_video_play =$('.creative_video_play');
     creative_video_play.click(function () {
-        $.fn.fullpage.setAllowScrolling(false);
-        var index = $(this).parents('.creative_video').index();
-        $('.video_play_mask').fadeIn(1000);
-        //在容器中添加<video>及播放插件相关方法
-        $('.video_play_container .video').append('<video></video>'+ '<script>plyr.setup();</script>');
-        //父级元素‘.creative_video’的同胞有3个，因此最后的index减1
-        $('.video_play_container .video video').attr('src',creative_video_src[index-1]);
-    });
-    $('.video_close').click(function () {
-        $.fn.fullpage.setAllowScrolling(true);
-        $('.video_play_mask').hide();
-        $('.video_play_container .video').empty();
+        videoPlay($(this),creative_video_src);
     });
     // 热力场
+
+    /*屏幕分辨率自适应*/
+    console.log(screen.width,screen.height)
 });

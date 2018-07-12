@@ -33,13 +33,13 @@
                 <img src="../img/three_img1.jpg" alt="无法显示">
             </div>
 
-            <!--<div id="model_box" class="model_box" @mouseover="stopRotation" @mouseout="rotate">-->
-                <!--<model-obj :rotation="rotation"-->
-                           <!--@on-load="onLoad"-->
-                           <!--:scale="scale"-->
-                           <!--:position="position"-->
-                           <!--src="../model/75360.obj" mtl="../model/75360.mtl"  width="900" height="600" ></model-obj>-->
-            <!--</div>-->
+            <div id="model_box" class="model_box" @mouseover="stopRotation" @mouseout="rotate">
+                <model-obj :rotation="rotation"
+                           @on-load="onLoad"
+                           :scale="scale"
+                           :position="position"
+                           src="../model/hats.obj" mtl=""   :style="{width:model_width,height:model_height}"  ></model-obj>
+            </div>
         </div>
         <div class="relic_introduce">
             <span class="relic_title">【清同治年制款黄地粉彩梅鹊纹瓷碗】</span>
@@ -109,72 +109,9 @@
                 <img src="../img/history1.jpg" alt="无法显示">
             </div>
             <div class="history_show">
-                <div class="history_up_box">
-                    <div class="history_up" style="margin-left: 280px;margin-right: 200px;">
-                        <div class="line_down">
-                            <div class="circle_div">
-                                <div class="circle_content">
-                                    <div class="two_circle"></div>
-                                    <div class="center_circle"></div>
-                                </div>
-                            </div>
-                            <div class="history_down_font">
-                                <p class="down_font">发现:XXXXX</p>
-                                <p class="down_font">出土：XXX</p>
-                                <p class="down_font">修复：XXXXXXXXXX</p>
-                                <p class="down_font">定级：XXX</p>
-                                <p class="down_font">获奖：XXX</p>
-                                <p class="down_font">重要展出：XXX</p>
-                                <p class="discover_font">约公元前16世纪</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="history_up" style="left: 744px;">
-                        <div class="line_down">
-                            <div class="circle_div">
-                                <div class="circle_content">
-                                    <div class="two_circle"></div>
-                                    <div class="center_circle"></div>
-                                </div>
-                            </div>
-                            <div class="history_down_font">
-                                <p class="down_font">发现:XXXXX</p>
-                                <p class="down_font">出土：XXX</p>
-                                <p class="down_font">修复：XXXXXXXXXX</p>
-                                <p class="down_font">定级：XXX</p>
-                                <p class="down_font">获奖：XXX</p>
-                                <p class="down_font">重要展出：XXX</p>
-                                <p class="discover_font">约公元前16世纪</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="time_axis_box">
-                    <div class="time_axis">
-                        <p class="time_Arrow"></p>
-                    </div>
-                </div> -->
-                <div class="history_down_box">
-                    <p class="time_Arrow"></p>
-                    <div class="history_down" style="margin-left: 90px;margin-right: 240px">
-                            <div class="line_down">
-                                <div class="circle_div">
-                                    <div class="circle_content">
-                                        <div class="two_circle"></div>
-                                        <div class="center_circle"></div>
-                                    </div>
-                                </div>
-                                <div class="history_down_font">
-                                    <p class="down_font">发现</p>
-                                    <p class="down_font">1998年，龙山文化是我国新石器时代晚期的一种文化，因1928年首次发现于山东章丘龙山镇而得名。</p>
-                                    <p class="down_font">发现</p>
-                                    <p class="down_font">1998年，龙山文化是我国新石器时代晚期的一种文化，因1928年首次发现于山东章丘龙山镇而得名。</p>
-                                    <p class="discover_font">约公元前16世纪</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="history_down" style="left: 536px">
+                <div class="history_up_out">
+                    <div class="history_up_box">
+                        <div class="history_up">
                             <div class="line_down">
                                 <div class="circle_div">
                                     <div class="circle_content">
@@ -192,6 +129,93 @@
                                     <p class="discover_font">约公元前16世纪</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="history_up" >
+                            <div class="line_down">
+                                <div class="circle_div">
+                                    <div class="circle_content">
+                                        <div class="two_circle"></div>
+                                        <div class="center_circle"></div>
+                                    </div>
+                                </div>
+                                <div class="history_down_font">
+                                    <p class="down_font">发现:XXXXX</p>
+                                    <p class="down_font">出土：XXX</p>
+                                    <p class="down_font">修复：XXXXXXXXXX</p>
+                                    <p class="down_font">定级：XXX</p>
+                                    <p class="down_font">获奖：XXX</p>
+                                    <p class="down_font">重要展出：XXX</p>
+                                    <p class="discover_font">约公元前16世纪</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="time_axis_box">-->
+                    <!--<div class="time_axis">-->
+                        <!--<p class="time_Arrow"></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="history_down_out">
+                    <p class="time_Arrow">
+                    <div class="history_down_box">
+                        <!--<p class="time_Arrow"></p>-->
+                        <div class="history_down">
+                                <div class="line_down">
+                                    <div class="circle_div">
+                                        <div class="circle_content">
+                                            <div class="two_circle"></div>
+                                            <div class="center_circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="history_down_font">
+                                        <p class="down_font">发现</p>
+                                        <p class="down_font">1998年，龙山文化是我国新石器时代晚期的一种文化，因1928年首次发现于山东章丘龙山镇而得名。</p>
+                                        <p class="down_font">发现</p>
+                                        <p class="down_font">1998年，龙山文化是我国新石器时代晚期的一种文化，因1928年首次发现于山东章丘龙山镇而得名。</p>
+                                        <p class="discover_font">约公元前16世纪</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="history_down">
+                                <div class="line_down">
+                                    <div class="circle_div">
+                                        <div class="circle_content">
+                                            <div class="two_circle"></div>
+                                            <div class="center_circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="history_down_font">
+                                        <p class="down_font">发现:XXXXX</p>
+                                        <p class="down_font">出土：XXX</p>
+                                        <p class="down_font">修复：XXXXXXXXXX</p>
+                                        <p class="down_font">定级：XXX</p>
+                                        <p class="down_font">获奖：XXX</p>
+                                        <p class="down_font">重要展出：XXX</p>
+                                        <p class="discover_font">约公元前16世纪</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="history_down">-->
+                                <!--<div class="line_down">-->
+                                    <!--<div class="circle_div">-->
+                                        <!--<div class="circle_content">-->
+                                            <!--<div class="two_circle"></div>-->
+                                            <!--<div class="center_circle"></div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="history_down_font">-->
+                                        <!--<p class="down_font">发现:XXXXX</p>-->
+                                        <!--<p class="down_font">出土：XXX</p>-->
+                                        <!--<p class="down_font">修复：XXXXXXXXXX</p>-->
+                                        <!--<p class="down_font">定级：XXX</p>-->
+                                        <!--<p class="down_font">获奖：XXX</p>-->
+                                        <!--<p class="down_font">重要展出：XXX</p>-->
+                                        <!--<p class="discover_font">约公元前16世纪</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -280,8 +304,8 @@
             </div>
         </div>
     </div>
-    <iframe src="3D_model.html" frameborder="0" width="900px" height="600px" class="model_iframe">
+    <!--<iframe src="3D_model.html" frameborder="0" width="900px" height="600px" class="model_iframe">-->
 
-    </iframe>
+    <!--</iframe>-->
 </body>
 </html>

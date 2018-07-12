@@ -1,5 +1,5 @@
 $(function () {
-
+    //热力图
     var noise = getNoiseHelper();
     var xData = [];
     var yData = [];
@@ -23,7 +23,7 @@ $(function () {
     var rgba_opacity=0.3;
     var data = generateData(2, -5, 5);
 
-    option = {
+    var option = {
         tooltip: {},
         xAxis: {
             type: 'category',
@@ -383,6 +383,4 @@ $(function () {
 
         return module;
     }
-
-
 })
