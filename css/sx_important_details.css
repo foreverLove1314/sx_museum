@@ -250,6 +250,14 @@ body{
     overflow-x: auto;
     overflow-y: hidden;
 }
+.history_show::-webkit-scrollbar{
+    height: 10px;
+    background-color: #F5F5F5;
+}
+.history_show::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: rgba(186,154,103,0.7);
+}
 .time_axis_box{
     position: relative;
 }

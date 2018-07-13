@@ -23,9 +23,15 @@ $(function () {
         $.fn.fullpage.moveTo((nav_item+1), 0);//
     });
     //数字滚动
+    var num_roll = $('.basic_info_top .counter');
+
     setTimeout(function () {
+        num_roll.eq(0).html('271300');
+        num_roll.eq(1).html('1268000');
+        num_roll.eq(2).html('26022');
+        num_roll.eq(3).html('10028');
         $('.counter').counterUp();
-    },2000)
+    },1500);
     //特展人流量
     var my_echarts = $('.basic_info_middle .right .content');
     //echarts宽高自适应

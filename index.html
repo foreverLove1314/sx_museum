@@ -36,9 +36,9 @@
         .summary{
             height: 100%;
         }
-        #first_page .left_info .title{
+        .title{
             list-style: none;
-            height:40px;
+            height: 40px;
             font-size:24px;
             color: #ba9a67;
             font-weight: 500;
@@ -46,7 +46,7 @@
             bottom: -40px;
             opacity: 0;
         }
-        #first_page .left_info .title:hover{
+        .title:hover{
             color: #75553f;
         }
         .triangle {
@@ -56,10 +56,10 @@
             border-left-color:#ba9a67;
             display: inline-block;
         }
-        #first_page .left_info .title:hover .triangle{
+        .title:hover .triangle{
             border-left-color: #75553f;
         }
-        #first_page .left_info .title .word{
+        .word{
             display: inline-block;
             margin: 0;
             height: 40px;
@@ -69,19 +69,46 @@
             cursor: pointer;
             color: #ba9a67;
         }
-        #first_page .left_info .title .word:hover{
+        .word:hover{
             color: #75553f;
         }
         .logo{
             position: absolute;
             left: 50%;
             bottom: -65px;
-            width: 136px;
-            height: 65px;
             margin: auto;
             background: url("img/logo.png");
             opacity: 0;
             cursor: pointer;
+            background-size: 100% 100%;
+        }
+        @media screen and (min-width: 1366px) and (max-width: 1400px) {
+            .title{
+                font-size: 20px;
+                height: 30px;
+            }
+            .triangle{
+                border: 15px solid transparent;
+                border-left-color: #ba9a67;
+            }
+            .word{
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+        @media screen and (min-width: 1401px) and (max-width: 1600px) {
+            .title{
+                font-size: 22px;
+                height: 34px;
+            }
+            .triangle{
+                border: 17px solid transparent;
+                border-left-color: #ba9a67;
+            }
+            .word{
+                height: 34px;
+                line-height: 34px;
+            }
         }
     </style>
     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
@@ -120,19 +147,26 @@
 </body>
 <script type="text/javascript">
     $(function (){
+        var interval = screen.height*120/1050;      //以1680*1050以上分辨率需要移动的高度为基准，定义li之间的间隔变量
+        var top_instance = screen.height*200/1050;  //以1680*1050以上分辨率li距离顶部的高度为基准，定义li距离顶部的高度
+        var logo_buttom = screen.height*80/1050;    //以1680*1050以上分辨率li距离顶部的高度为基准，定义logo距离底部的高度
+        //以1680*1050分辨率下logo宽高为基准，使其宽高随屏幕分辨率变化
+        $('.logo').width(screen.width*136/1680);
+        $('.logo').height(screen.height*65/1050);
+        //标题及logo动画方法
+        function animate(interval,top_instance,logo_buttom) {
+            for (var i=0;i<=li.length;i++){
+                li.eq(i).delay(i*600).animate({top:i*interval+top_instance,opacity:1},2000);
+            }
+            $('#first_page .logo').delay(3600).animate({bottom:logo_buttom,opacity:1},2500);
+        }
         $('#first_page').height($(window).height());//高度自适应浏览器窗口高度
         var li = $('#first_page .left_info .title');
-        for (var i=0;i<=li.length;i++){
-            li.eq(i).delay(i*600).animate({top:i*120+200,opacity:1},2000);
-        }
-        $('#first_page .logo').delay(3600).animate({bottom:80,opacity:1},2500);
+        animate(interval,top_instance,logo_buttom);
         //跳转
         setTimeout(function () {
             location.href='html/sx_all.html'
         },8000)
     })
-
-
-
 </script>
 </html>
