@@ -24,7 +24,6 @@ $(function () {
     });
     //数字滚动
     var num_roll = $('.basic_info_top .counter');
-
     setTimeout(function () {
         num_roll.eq(0).html('271300');
         num_roll.eq(1).html('1268000');
