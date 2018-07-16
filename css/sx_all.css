@@ -273,7 +273,7 @@ table {
     margin-bottom: 10px;
 }
 .basic_info_bottom .mask .content .characters p{
-    font-size: 13px;
+    font-size: 14px;
     text-indent:2em;
 }
 .basic_info_bottom ul li:hover img {
@@ -610,127 +610,186 @@ table {
 }
 
 /*分辨率自适应*/
-@media only screen  and (max-width:1600px) {
-    .env_info_box{
-        padding-left: 8px;
-    }
-    .env_info_box .env_right{
-        margin: 0 5px;
-    }
-    .env_info_box .verticalLine{
-        margin: 14px 5px 14px 5px;
-    }
-}
-@media screen and (min-width:1366px) and (max-width:1400px){
+@media screen and (min-width:1366px) and (max-width:1400px) {
     /*文物基本信息*/
     .sx_nav_ul {
         margin-left: 8%;
     }
-    .sx_nav_ul li a{
+
+    .sx_nav_ul li a {
         font-size: 16px;
     }
-    .basic_info_top{
+
+    .basic_info_top {
         font-size: 14px;
     }
-    .basic_info_top div span{
+
+    .basic_info_top div span {
         font-size: 21px;
     }
-    .basic_info_middle{
+
+    .basic_info_middle {
         height: 56%;
     }
-    .basic_info_middle .left .basis{
+
+    .basic_info_middle .left .basis {
         font-size: 14px;
     }
-    .basic_info_middle .left .counter_no{
+
+    .basic_info_middle .left .counter_no {
         font-size: 28px;
     }
-    .basic_info_middle .left .word{
+
+    .basic_info_middle .left .word {
         font-size: 12px;
     }
-    .basic_info_middle .right .title div{
+
+    .basic_info_middle .right .title div {
         font-size: 19px;
     }
-    .basic_info_middle .right .footer{
+
+    .basic_info_middle .right .footer {
         font-size: 13px;
     }
-    .basic_info_middle .right .footer .img{
+
+    .basic_info_middle .right .footer .img {
         background-size: 100% 100%;
         width: 98px;
         height: 28px;
         font-size: 12px;
     }
-    .basic_info_bottom ul li img{
+
+    .basic_info_bottom ul li img {
         width: 22px;
         height: 16px;
         top: 7px;
         right: 10px;
     }
-    .basic_info_bottom .mask .content{
+
+    .basic_info_bottom .mask .content {
         padding: 7px 10px;
         font-size: 12px;
     }
-    .basic_info_bottom .mask .content .characters{
+
+    .basic_info_bottom .mask .content .characters {
         padding: 10px 0 0 0;
     }
-    .basic_info_bottom .mask .content .characters span{
+
+    .basic_info_bottom .mask .content .characters span {
         font-size: 15px;
         margin-bottom: 5px;
     }
-    .basic_info_bottom .mask .content .characters p{
+
+    .basic_info_bottom .mask .content .characters p {
         font-size: 10px;
         display: -webkit-box;
         overflow: hidden;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
     }
+
     /*环境信息*/
-    .env_info_box{
+    .env_info_box {
         font-size: 14px;
     }
-    .env_site{
+
+    .env_site {
         height: 84%;
     }
-    .env_info_box span{
-        margin: 0 1.4%;
+    .env_info_box span {
+        margin: 0 1%;
     }
+    .env_info_box .verticalLine{
+        margin: 14px 15px 14px 15px;
+    }
+    .env_info_box .env_right{
+        margin: 0 5px;
+    }
+
     /*重点文物信息*/
-    .important_relics_info_top{
+    .important_relics_info_top {
         font-size: 14px;
     }
-    .important_relics_info_top div span{
+
+    .important_relics_info_top div span {
         font-size: 21px;
     }
-    .important_relics ul li{
+
+    .important_relics ul li {
         width: 172px;
         margin-right: 10px;
         margin-top: 0.7%;
     }
-    .important_relics_info .form table th{
+
+    .important_relics_info .form table th {
         font-size: 17px;
         height: 30px;
     }
-    .important_relics_info .form table{
+
+    .important_relics_info .form table {
         font-size: 13px;
     }
-    .important_relics_info .form table td{
+
+    .important_relics_info .form table td {
         height: 41px;
     }
-    .important_relics_info .form .schedule_bg{
+
+    .important_relics_info .form .schedule_bg {
         height: 18px;
     }
-    .important_relics_info .form{
+
+    .important_relics_info .form {
         height: 56%;
     }
-    .important_relics_info .form .scroll{
+
+    .important_relics_info .form .scroll {
         height: 90%;
     }
+
     /*创意文物信息*/
-    .creative_video{
+    .creative_video {
         height: 310px;
     }
-    .creative_video_play{
+
+    .creative_video_play {
         width: 90px;
         height: 90px;
     }
 }
+@media screen and (min-width:1401px) and (max-width:1600px){
+
+    .env_info_box .env_right{
+        margin: 0 10px;
+    }
+    .env_info_box span {
+        margin: 0 0.5%;
+    }
+    .env_info_box .verticalLine{
+        margin: 14px 10px 14px 10px;
+    }
+}
+@media screen and (min-width:1600px) and (max-width:1679px){
+    .env_info_box .env_right{
+        margin: 0 40px;
+    }
+    .env_info_box{
+        padding-left: 8px;
+    }
+    .env_info_box .verticalLine{
+        margin: 14px 10px 14px 40px;
+    }
+}
+@media screen and (min-height:767px) and (max-height:900px){
+    .basic_info_middle{
+        height: 58%;
+    }
+    .basic_info_bottom .mask .content .characters p{
+        font-size: 13px;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+}
+
 /*舆情信息*/
