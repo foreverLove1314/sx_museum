@@ -63,6 +63,8 @@ $(function () {
             $(this).hide();
         }
     });
+    //视频mask层跟随鼠标进入事件
+    $('.basic_info_bottom ul li').mouseMove('.mask');
     //视频
     var video_src =['../video/video1.mp4','../video/video2.mp4','../video/video1.mp4','../video/video2.mp4'];
     var video_play =$('.basic_info_bottom ul li img');
