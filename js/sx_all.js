@@ -156,7 +156,6 @@ $(function () {
         videoPlay($(this),creative_video_src);
     });
     // 热力场
-
     /*屏幕分辨率自适应*/
 
 });

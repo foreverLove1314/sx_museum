@@ -2,7 +2,6 @@ $(function () {
 	// 达标率
     // 3D模型
     var model_width1 = $('#model_box').width()+"px";
-    console.log(model_width1)
     var model_height1 = $('#model_box').height()+"px";
     new Vue({
         el: '#model_box',
@@ -416,12 +415,12 @@ $(function () {
                     normal: {
                         // borderWidth: .5,//区域边框宽度
                         borderColor: '#009fe8',//区域边框颜色
-                        areaColor:"#ffefd5",//区域颜色
+                        areaColor:"#ffefd5"//区域颜色
                     },
                     emphasis: {
                         borderWidth: .5,
                         borderColor: '#4b0082',
-                        areaColor:"#ffdead",
+                        areaColor:"#ffdead"
                     }
                 },
                 data:[
