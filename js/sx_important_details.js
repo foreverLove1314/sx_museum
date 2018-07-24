@@ -1,9 +1,8 @@
 $(function () {
 	// 达标率
     // 3D模型
-    var model_width1 = $('.img_three_d').width()*0.6+"px";
-    console.log(model_width1)
-    var model_height1 = $('.img_three_d').height()*0.9+"px";
+    var model_width1 = $('#model_box').width()+"px";
+    var model_height1 = $('#model_box').height()+"px";
     new Vue({
         el: '#model_box',
         data: {
@@ -85,6 +84,14 @@ $(function () {
 			}
 		]
     };
+    //特征数据，馆藏数据
+    var data_left_height = $('.data_font_left').height();
+    var data_right_height = $('.data_font_right').height();
+    if(data_left_height>=data_right_height){
+        $('.data_font_right').height(data_left_height);
+    }else {
+        $('.data_font_left').height(data_right_height);
+    }
     setInterval(function () {
         gaugeOption.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
         standardRate.setOption(gaugeOption, true);
@@ -408,12 +415,12 @@ $(function () {
                     normal: {
                         // borderWidth: .5,//区域边框宽度
                         borderColor: '#009fe8',//区域边框颜色
-                        areaColor:"#ffefd5",//区域颜色
+                        areaColor:"#ffefd5"//区域颜色
                     },
                     emphasis: {
                         borderWidth: .5,
                         borderColor: '#4b0082',
-                        areaColor:"#ffdead",
+                        areaColor:"#ffdead"
                     }
                 },
                 data:[
@@ -460,7 +467,7 @@ $(function () {
         // 控制台打印数据的名称
         console.log(params);
     });
-    // 文物出图信息
+    // 文物出土信息
    var history_up_width= $(".history_up").length*$(".history_up").width()+($(".history_up").length-1)*200+280;
    var history_down_width= $(".history_down").length*$(".history_down").width()+($(".history_down").length-1)*240+90;
    if(history_up_width>=history_down_width){//比较文物出图信息上下元素的宽度大小

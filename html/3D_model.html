@@ -40,14 +40,14 @@
                 run:""
             },
             methods: {
-                onLoad () {
+                onLoad:function () {
                     this.rotate();
                 },
-                rotate () {
+                rotate:function() {
                     this.rotation.y += 0.01;
                     this.run=requestAnimationFrame( this.rotate );
                 },
-                stopRotation(){
+                stopRotation:function(){
                     cancelAnimationFrame(this.run)
                 }
             }
