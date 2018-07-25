@@ -88,7 +88,7 @@ $(function () {
     // 环境信息的环境场轮播
     var liItem=0;//表示当前显示环境场的下标，默认第一个
     var envSiteLen=$(".env_site_play ul li").length;
-    $(".env_left_btn").click(function () {//环境场向左切换
+    $(".env_right_btn").click(function () {//环境场向右切换
         liItem++;
         if(liItem==4){
             liItem=0;
@@ -97,7 +97,7 @@ $(function () {
         $(".env_site_nav a").css("color","#b6b6b6");//还原下方文字的字体颜色
         $(".env_site_nav a").eq(liItem).css("color","#ffffff");//添加对应焦点文字的样式
     });
-    $(".env_right_btn").click(function () {//环境场向右切换
+    $(".env_left_btn").click(function () {//环境场向左切换
         liItem--;
         if(liItem==-1){
             liItem=3;
@@ -156,7 +156,6 @@ $(function () {
         videoPlay($(this),creative_video_src);
     });
     // 热力场
-
     /*屏幕分辨率自适应*/
 
 });
